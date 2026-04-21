@@ -11,8 +11,12 @@ const QUICK: { label: string; to: string }[] = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-stone-200 bg-stone-950 py-16 text-stone-400">
-      <div className="mx-auto max-w-6xl px-6">
+    <footer className="relative overflow-hidden bg-gradient-to-b from-[#141c1b] via-stone-950 to-[#0f1211] py-16 text-stone-400">
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[rgb(26_58_54/0.25)] to-transparent"
+        aria-hidden
+      />
+      <div className="relative mx-auto max-w-6xl px-6">
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -51,7 +55,7 @@ export function Footer() {
             </p>
           </div>
         </div>
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-stone-800 pt-8 md:flex-row">
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/[0.08] pt-8 md:flex-row">
           <div className="flex gap-6 text-sm">
             <a href="#" className="transition hover:text-white" aria-label="LinkedIn">LinkedIn</a>
             <a href="#" className="transition hover:text-white" aria-label="Twitter">Twitter</a>

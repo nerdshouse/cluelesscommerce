@@ -5,8 +5,11 @@ const ease = [0.22, 1, 0.36, 1] as const
 
 export function Contact() {
   return (
-    <section id="contact" className="relative overflow-hidden border-t border-stone-200 bg-[#faf9f7] py-24 md:py-32">
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/60 to-transparent" aria-hidden />
+    <section id="contact" className="relative overflow-hidden bg-transparent py-24 md:py-32">
+      <div
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_55%_50%_at_50%_0%,rgb(26_58_54/0.06),transparent_60%),linear-gradient(180deg,rgb(255_255_255/0.35)_0%,transparent_45%)]"
+        aria-hidden
+      />
 
       <div className="relative mx-auto max-w-3xl px-6 text-center">
         <motion.span

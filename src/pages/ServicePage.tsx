@@ -18,7 +18,7 @@ export function ServicePage() {
 
   if (!service) {
     return (
-      <main className="min-h-screen bg-[#f0ebe6] pt-24 pb-20 sm:pt-28">
+      <main className="min-h-screen bg-transparent pt-24 pb-20 sm:pt-28">
         <div className="mx-auto max-w-lg px-4 py-20 text-center sm:px-6">
           <p className="text-[0.65rem] font-semibold uppercase tracking-[0.22em] text-stone-400">404</p>
           <h1 className="mt-3 font-display text-2xl font-medium tracking-tight text-stone-900">Service unavailable</h1>
@@ -38,9 +38,17 @@ export function ServicePage() {
 
   return (
     <main
-      className={`relative min-h-screen overflow-hidden bg-gradient-to-b ${accent.wash} via-[#f2efe9] to-[#ebe6df] pb-20 pt-20 sm:pb-28 sm:pt-24 md:pt-28`}
+      className={`relative min-h-screen overflow-hidden bg-gradient-to-b ${accent.wash} via-[#f4f1eb]/92 to-[#e6e1da] pb-20 pt-20 sm:pb-28 sm:pt-24 md:pt-28`}
     >
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-56 bg-gradient-to-b from-white/80 to-transparent" aria-hidden />
+      <div
+        className="pointer-events-none absolute inset-0 opacity-90"
+        aria-hidden
+        style={{
+          backgroundImage:
+            'radial-gradient(ellipse 70% 45% at 100% 0%, rgb(72 58 88 / 0.06), transparent 50%), radial-gradient(ellipse 55% 40% at 0% 85%, rgb(26 58 54 / 0.06), transparent 52%)',
+        }}
+      />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-white/50 to-transparent" aria-hidden />
 
       <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:max-w-4xl">
         <nav className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-[0.65rem] font-medium uppercase tracking-[0.16em] text-stone-500">
@@ -59,7 +67,7 @@ export function ServicePage() {
           initial="hidden"
           animate="visible"
           variants={viewReveal}
-          className="mt-8 overflow-hidden rounded-2xl border border-stone-200/90 bg-white/95 p-6 shadow-[0_28px_70px_-40px_rgba(28,25,23,0.2)] sm:p-10 md:mt-10"
+          className="glass-panel mt-8 overflow-hidden rounded-[1.75rem] p-6 sm:p-10 md:mt-10"
         >
           <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
             <span className={`w-fit rounded-full px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] ${accent.badge}`}>{service.badge}</span>
@@ -89,13 +97,13 @@ export function ServicePage() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-4% 0px' }}
-            className="mt-5 grid gap-3 sm:mt-6 sm:grid-cols-2 sm:gap-4"
+            className="mt-6 grid gap-5 sm:mt-8 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-8"
           >
             {service.keyFeatures.map((f) => (
               <motion.li
                 key={f.title}
                 variants={staggerItem}
-                className={`rounded-xl border bg-white/90 p-4 sm:p-5 ${accent.pointCard}`}
+                className={`rounded-2xl p-4 sm:p-5 ${accent.pointCard}`}
               >
                 <p className="font-display text-base font-medium text-stone-900">{f.title}</p>
                 <p className="mt-2 text-sm leading-relaxed text-stone-600">{f.body}</p>
@@ -104,30 +112,26 @@ export function ServicePage() {
           </motion.ul>
         </motion.section>
 
-        <div className="mt-10 grid gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-5">
-          <motion.section
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={viewReveal}
-            className={`rounded-2xl border bg-white/95 p-5 sm:p-6 ${accent.pointCard}`}
-          >
-            <SectionHeading>Delivery timeline</SectionHeading>
-            <p className="mt-4 font-display text-2xl font-semibold tabular-nums text-stone-900 sm:text-3xl">{service.timeline}</p>
-            <p className="mt-2 text-sm text-stone-500">From kickoff to handoff for a typical scope.</p>
-          </motion.section>
-          <motion.section
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={viewReveal}
-            className={`rounded-2xl border bg-white/95 p-5 sm:p-6 ${accent.pointCard}`}
-          >
-            <SectionHeading>Engagement</SectionHeading>
-            <p className="mt-4 font-display text-xl font-semibold text-stone-900 sm:text-2xl">{service.engagement}</p>
-            <p className="mt-2 text-sm text-stone-500">How we contract and run the work together.</p>
-          </motion.section>
-        </div>
+        <motion.section
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={viewReveal}
+          className="glass-panel-subtle mt-10 rounded-[1.75rem] p-6 sm:mt-12 sm:p-8"
+        >
+          <div className="grid gap-8 sm:grid-cols-2 sm:gap-10">
+            <div>
+              <SectionHeading>Delivery timeline</SectionHeading>
+              <p className="mt-4 font-display text-2xl font-semibold tabular-nums text-stone-900 sm:text-3xl">{service.timeline}</p>
+              <p className="mt-2 text-sm text-stone-500">From kickoff to handoff for a typical scope.</p>
+            </div>
+            <div className="border-t border-stone-200/50 pt-8 sm:border-l sm:border-t-0 sm:pl-10 sm:pt-0">
+              <SectionHeading>Engagement</SectionHeading>
+              <p className="mt-4 font-display text-xl font-semibold text-stone-900 sm:text-2xl">{service.engagement}</p>
+              <p className="mt-2 text-sm text-stone-500">How we contract and run the work together.</p>
+            </div>
+          </div>
+        </motion.section>
 
         {service.priceLine ? (
           <motion.section
@@ -135,7 +139,7 @@ export function ServicePage() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={viewReveal}
-            className="mt-10 rounded-2xl border border-stone-200/90 bg-stone-950 p-6 text-white sm:mt-12 sm:p-8"
+            className="mt-10 rounded-[1.75rem] bg-gradient-to-br from-[#1a2524] via-stone-950 to-[#1a1520] p-6 text-white shadow-[0_32px_80px_-40px_rgb(0_0_0/0.35)] sm:mt-12 sm:p-8"
           >
             <SectionHeading>
               <span className="text-white">Pricing</span>
@@ -144,35 +148,31 @@ export function ServicePage() {
           </motion.section>
         ) : null}
 
-        <div className="mt-10 grid gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-5">
-          <motion.section
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={viewReveal}
-            className="rounded-2xl border border-stone-200/80 bg-white/95 p-5 sm:p-6"
-          >
-            <SectionHeading>Compatible with</SectionHeading>
-            <p className="mt-4 text-sm leading-relaxed text-stone-600 sm:text-base">{service.compatibleWith}</p>
-          </motion.section>
-          <motion.section
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={viewReveal}
-            className="rounded-2xl border border-stone-200/80 bg-white/95 p-5 sm:p-6"
-          >
-            <SectionHeading>Typically used by</SectionHeading>
-            <ul className="mt-4 space-y-2 text-sm text-stone-600 sm:text-base">
-              {service.audience.map((line) => (
-                <li key={line} className="flex gap-2">
-                  <span className={`mt-2 h-1 w-1 shrink-0 rounded-full ${accent.stripe}`} aria-hidden />
-                  <span>{line}</span>
-                </li>
-              ))}
-            </ul>
-          </motion.section>
-        </div>
+        <motion.section
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={viewReveal}
+          className="mt-10 sm:mt-12"
+        >
+          <div className="grid gap-10 sm:grid-cols-2 sm:gap-14">
+            <div>
+              <SectionHeading>Compatible with</SectionHeading>
+              <p className="mt-4 text-sm leading-relaxed text-stone-600 sm:text-base">{service.compatibleWith}</p>
+            </div>
+            <div>
+              <SectionHeading>Typically used by</SectionHeading>
+              <ul className="mt-4 space-y-3 text-sm text-stone-600 sm:text-base">
+                {service.audience.map((line) => (
+                  <li key={line} className="flex gap-3">
+                    <span className={`mt-2 h-1 w-1 shrink-0 rounded-full ${accent.stripe}`} aria-hidden />
+                    <span>{line}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </motion.section>
 
         <motion.section
           initial="hidden"
@@ -182,11 +182,11 @@ export function ServicePage() {
           className="mt-10 sm:mt-12"
         >
           <SectionHeading>Impact</SectionHeading>
-          <ul className="mt-5 space-y-3 sm:mt-6">
+          <ul className="mt-6 space-y-4 sm:mt-8">
             {service.impact.map((line) => (
-              <li key={line} className="flex gap-3 rounded-xl border border-stone-200/70 bg-white/80 px-4 py-3 text-sm text-stone-700 sm:text-[0.9375rem]">
-                <span className="font-display text-stone-400">✓</span>
-                {line}
+              <li key={line} className="flex gap-4 text-sm leading-relaxed text-stone-700 sm:text-[0.9375rem]">
+                <span className="font-display shrink-0 text-stone-300">✓</span>
+                <span>{line}</span>
               </li>
             ))}
           </ul>
@@ -200,11 +200,11 @@ export function ServicePage() {
           className="mt-10 sm:mt-12"
         >
           <SectionHeading>Our process</SectionHeading>
-          <ol className="mt-6 space-y-0 rounded-2xl border border-stone-200/80 bg-white/90 sm:mt-8">
+          <ol className="mt-8 divide-y divide-stone-200/60 sm:mt-10">
             {service.process.map((step) => (
               <li
                 key={step.n}
-                className="flex gap-4 border-b border-stone-100 px-4 py-5 last:border-b-0 sm:gap-5 sm:px-6 sm:py-6"
+                className="flex gap-5 py-6 first:pt-0 sm:gap-6 sm:py-7"
               >
                 <span className="font-display text-sm font-bold tabular-nums text-stone-400">{step.n}</span>
                 <div className="min-w-0 flex-1">
@@ -224,10 +224,10 @@ export function ServicePage() {
           className="mt-10 sm:mt-12"
         >
           <SectionHeading>Scope checklist</SectionHeading>
-          <ul className="mt-5 space-y-2 rounded-2xl border border-stone-200/80 bg-white/90 p-4 sm:mt-6 sm:p-5">
+          <ul className="mt-6 space-y-3 sm:mt-8">
             {service.points.map((p) => (
-              <li key={p} className="flex gap-3 border-b border-stone-100 py-2.5 text-sm text-stone-700 last:border-b-0 sm:text-[0.9375rem]">
-                <span className="text-stone-400">•</span>
+              <li key={p} className="flex gap-3 text-sm leading-relaxed text-stone-700 sm:text-[0.9375rem]">
+                <span className="text-stone-300">•</span>
                 {p}
               </li>
             ))}
@@ -239,7 +239,7 @@ export function ServicePage() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={viewReveal}
-          className="mt-12 rounded-2xl border border-stone-900/10 bg-stone-950 px-6 py-10 text-center sm:mt-14 sm:px-10 sm:py-12"
+          className="mt-12 rounded-[1.75rem] bg-gradient-to-br from-[#1a2524] via-stone-950 to-[#1a1520] px-6 py-10 text-center shadow-[0_40px_90px_-44px_rgb(0_0_0/0.38)] sm:mt-14 sm:px-10 sm:py-12"
         >
           <h2 className="font-display text-xl font-medium text-white sm:text-2xl">Ready to get started?</h2>
           <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-stone-400">

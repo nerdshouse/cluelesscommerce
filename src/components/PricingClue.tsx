@@ -8,10 +8,10 @@ export function PricingClue() {
   return (
     <section
       id="pricing-clue"
-      className="relative overflow-hidden border-y border-stone-800 bg-black py-20 md:py-28"
+      className="relative overflow-hidden bg-gradient-to-br from-[#1a2524] via-stone-950 to-[#1a1520] py-20 md:py-28"
     >
-      <div className="pointer-events-none absolute -left-20 top-0 h-64 w-64 rounded-full bg-white/5 blur-3xl" aria-hidden />
-      <div className="pointer-events-none absolute -right-16 bottom-0 h-56 w-56 rounded-full bg-white/5 blur-3xl" aria-hidden />
+      <div className="pointer-events-none absolute left-0 top-0 h-64 w-64 rounded-full bg-white/5 blur-3xl" aria-hidden />
+      <div className="pointer-events-none absolute right-0 bottom-0 h-56 w-56 rounded-full bg-white/5 blur-3xl" aria-hidden />
 
       <div className="relative mx-auto max-w-4xl px-6 text-center">
         <motion.h2

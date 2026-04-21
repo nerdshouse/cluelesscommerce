@@ -23,7 +23,7 @@ export function TlcLeadForm() {
   }
 
   return (
-    <section id="lead" className="scroll-mt-28 border-b border-stone-200 bg-stone-50 py-16 md:py-24">
+    <section id="lead" className="scroll-mt-28 bg-transparent py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr),minmax(0,1.05fr)] lg:items-start lg:gap-16">
           <motion.div
@@ -63,21 +63,21 @@ export function TlcLeadForm() {
               <motion.p
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="border border-stone-200 bg-white p-8 text-stone-800 md:p-10"
+                className="glass-panel rounded-[1.5rem] p-8 text-stone-800 md:p-10"
               >
                 Thank you - your note is received. We&apos;ll be in touch shortly.
               </motion.p>
             ) : (
               <form
                 onSubmit={onSubmit}
-                className="space-y-5 border border-stone-200 bg-white p-6 md:p-8"
+                className="glass-panel space-y-6 rounded-[1.5rem] p-6 md:p-8"
               >
                 <label className="block">
                   <span className="text-sm font-medium text-stone-800">Monthly ad spend (indicative)</span>
                   <select
                     required
                     name="spend"
-                    className="mt-2 w-full border border-stone-300 bg-white px-4 py-3 text-stone-900 outline-none transition focus:border-stone-900"
+                    className="mt-2 w-full rounded-none border-x-0 border-t-0 border-b border-stone-200/80 bg-transparent px-0 py-3 text-stone-900 outline-none transition focus:border-stone-800"
                   >
                     <option value="">Select range</option>
                     {AD_SPEND.map((o) => (
@@ -92,7 +92,7 @@ export function TlcLeadForm() {
                   <select
                     required
                     name="hear"
-                    className="mt-2 w-full border border-stone-300 bg-white px-4 py-3 text-stone-900 outline-none transition focus:border-stone-900"
+                    className="mt-2 w-full rounded-none border-x-0 border-t-0 border-b border-stone-200/80 bg-transparent px-0 py-3 text-stone-900 outline-none transition focus:border-stone-800"
                   >
                     <option value="">Select</option>
                     {HEAR.map((o) => (
@@ -107,7 +107,7 @@ export function TlcLeadForm() {
                   <select
                     required
                     name="problem"
-                    className="mt-2 w-full border border-stone-300 bg-white px-4 py-3 text-stone-900 outline-none transition focus:border-stone-900"
+                    className="mt-2 w-full rounded-none border-x-0 border-t-0 border-b border-stone-200/80 bg-transparent px-0 py-3 text-stone-900 outline-none transition focus:border-stone-800"
                   >
                     <option value="">Select</option>
                     {PROBLEMS.map((o) => (
@@ -122,7 +122,7 @@ export function TlcLeadForm() {
                   <select
                     required
                     name="when"
-                    className="mt-2 w-full border border-stone-300 bg-white px-4 py-3 text-stone-900 outline-none transition focus:border-stone-900"
+                    className="mt-2 w-full rounded-none border-x-0 border-t-0 border-b border-stone-200/80 bg-transparent px-0 py-3 text-stone-900 outline-none transition focus:border-stone-800"
                   >
                     <option value="">Select</option>
                     {WHEN.map((o) => (
@@ -138,7 +138,7 @@ export function TlcLeadForm() {
                     name="pages"
                     rows={3}
                     placeholder="Paste URLs or describe"
-                    className="mt-2 w-full resize-y border border-stone-300 bg-white px-4 py-3 text-stone-900 outline-none placeholder:text-stone-400 transition focus:border-stone-900"
+                    className="mt-2 w-full resize-y rounded-xl border border-stone-200/60 bg-stone-50/40 px-4 py-3 text-stone-900 outline-none placeholder:text-stone-400 ring-1 ring-transparent transition focus:border-stone-400 focus:ring-stone-900/10"
                   />
                 </label>
                 <button

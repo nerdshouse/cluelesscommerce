@@ -6,7 +6,7 @@ export function TlcReviews() {
   const shown = TLC_REVIEWS.slice(0, 2)
 
   return (
-    <section id="reviews" className="scroll-mt-28 border-b border-stone-200 bg-[#faf9f7] py-20 md:py-28">
+    <section id="reviews" className="scroll-mt-28 bg-transparent py-20 md:py-28">
       <div className="mx-auto max-w-5xl px-6">
         <motion.div
           initial="hidden"

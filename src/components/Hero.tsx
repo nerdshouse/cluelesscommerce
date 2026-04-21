@@ -10,11 +10,11 @@ export function Hero() {
     <section className="relative min-h-[85vh] overflow-hidden pb-16 pt-8 md:min-h-[88vh] md:pb-24">
       <div className="pointer-events-none absolute inset-0 hero-mesh" aria-hidden />
       <div
-        className="pointer-events-none absolute -left-32 top-24 h-80 w-80 rounded-full bg-black/10 blur-[100px] animate-blob"
+        className="pointer-events-none absolute left-0 top-24 h-80 w-80 rounded-full bg-stone-400/15 blur-[100px] animate-blob"
         aria-hidden
       />
       <div
-        className="pointer-events-none absolute -right-28 bottom-20 h-96 w-96 rounded-full bg-neutral-400/15 blur-[110px] animate-blob-delayed"
+        className="pointer-events-none absolute right-0 bottom-20 h-96 w-96 rounded-full bg-neutral-400/15 blur-[110px] animate-blob-delayed"
         aria-hidden
       />
       <div className="pointer-events-none absolute inset-0 bg-grid-dark bg-[length:56px_56px] opacity-[0.35]" aria-hidden />
@@ -58,7 +58,7 @@ export function Hero() {
           <button
             type="button"
             onClick={openCalComPopup}
-            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-black px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-black/15 transition hover:bg-stone-900"
+            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-stone-950 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-stone-900/20 transition hover:bg-stone-900"
           >
             <span className="btn-shine absolute inset-0 opacity-30" />
             <span className="relative">Free consultation</span>

@@ -38,7 +38,7 @@ function InPageNav() {
   return (
     <nav
       aria-label="On this page"
-      className="sticky top-[4.25rem] z-20 -mx-4 border-b border-stone-200/90 bg-[#f0ebe6]/90 px-4 py-3 backdrop-blur-md sm:top-[4.75rem] sm:mx-0 sm:rounded-xl sm:border sm:shadow-sm md:top-28 lg:relative lg:top-auto lg:mx-0 lg:border lg:bg-[#f4f0eb]/95 lg:px-4 lg:py-5 lg:shadow-sm"
+      className="sticky top-[4.25rem] z-20 mx-0 bg-white/45 px-4 py-3 shadow-[0_12px_40px_-28px_rgb(28_25_23/0.1)] ring-1 ring-white/60 backdrop-blur-xl sm:top-[4.75rem] sm:rounded-2xl md:top-28 lg:relative lg:top-auto lg:px-4 lg:py-5"
     >
       <p className="mb-2 hidden text-[0.6rem] font-semibold uppercase tracking-[0.2em] text-stone-400 lg:block">On this page</p>
       <ul className="scroll-chips flex gap-2 overflow-x-auto pb-0.5 sm:flex-wrap sm:gap-2 sm:overflow-visible lg:flex-col lg:gap-1.5">
@@ -46,7 +46,7 @@ function InPageNav() {
           <li key={id} className="shrink-0 lg:shrink">
             <a
               href={`#${id}`}
-              className="inline-flex rounded-full border border-transparent bg-white/90 px-3.5 py-2 text-[0.65rem] font-medium uppercase tracking-[0.12em] text-stone-600 shadow-sm transition hover:border-stone-300 hover:text-stone-900 lg:w-full lg:justify-start lg:rounded-lg lg:border-stone-200/70 lg:bg-white/80 lg:px-3 lg:py-2.5 lg:text-[0.7rem] lg:normal-case lg:tracking-normal lg:shadow-none"
+              className="inline-flex rounded-full bg-white/50 px-3.5 py-2 text-[0.65rem] font-medium uppercase tracking-[0.12em] text-stone-600 ring-1 ring-transparent transition hover:bg-white/70 hover:text-stone-900 hover:ring-stone-200/50 lg:w-full lg:justify-start lg:rounded-xl lg:px-3 lg:py-2.5 lg:text-[0.7rem] lg:normal-case lg:tracking-normal"
             >
               {label}
             </a>
@@ -59,11 +59,19 @@ function InPageNav() {
 
 export function RetainerPage() {
   return (
-    <main className="min-h-screen bg-[#ebe6df] pb-20 pt-20 sm:pb-28 sm:pt-24 md:pt-28">
-      <div className="pointer-events-none fixed inset-x-0 top-0 h-72 bg-gradient-to-b from-white/50 to-transparent" aria-hidden />
+    <main className="relative min-h-screen bg-transparent pb-20 pt-20 sm:pb-28 sm:pt-24 md:pt-28">
+      <div
+        className="pointer-events-none absolute inset-0 opacity-90"
+        aria-hidden
+        style={{
+          backgroundImage:
+            'radial-gradient(ellipse 70% 45% at 80% 0%, rgb(72 58 88 / 0.06), transparent 52%), radial-gradient(ellipse 55% 42% at 0% 70%, rgb(26 58 54 / 0.06), transparent 50%), linear-gradient(175deg, rgb(250 248 244) 0%, rgb(237 232 224) 100%)',
+        }}
+      />
+      <div className="pointer-events-none fixed inset-x-0 top-0 h-72 bg-gradient-to-b from-white/40 to-transparent" aria-hidden />
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-stone-300/40 pb-5 sm:pb-6">
+        <div className="flex flex-wrap items-center justify-between gap-3 pb-5 sm:pb-6">
           <nav className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-[0.65rem] font-medium uppercase tracking-[0.16em] text-stone-500">
             <Link to="/" className="rounded-md px-2 py-1 transition hover:bg-white/50 hover:text-stone-900">
               Home
@@ -84,7 +92,7 @@ export function RetainerPage() {
           </div>
 
           <div className="min-w-0 space-y-0">
-            <section id="retainer-overview" className="scroll-mt-32 rounded-2xl border border-stone-200/80 bg-white/95 p-6 shadow-[0_24px_70px_-40px_rgba(28,25,23,0.25)] backdrop-blur-sm sm:p-8 md:p-10 lg:scroll-mt-36">
+            <section id="retainer-overview" className="glass-panel scroll-mt-32 rounded-[1.75rem] p-6 sm:p-8 md:p-10 lg:scroll-mt-36">
               <motion.header initial="hidden" animate="visible" variants={viewReveal}>
                 <p className="text-[0.65rem] font-semibold uppercase tracking-[0.26em] text-stone-500">Programme</p>
                 <h1 className="mt-3 font-display text-[1.9rem] font-medium leading-[1.1] tracking-tight text-stone-950 sm:text-4xl md:text-[2.6rem]">
@@ -94,9 +102,9 @@ export function RetainerPage() {
                   Six verticals under one strategist: CRO, Shopify, performance, email, social, and SEO — with weekly rhythm and
                   monthly reporting.
                 </p>
-                <details className="mt-6 rounded-xl border border-stone-200/80 bg-stone-50/60 px-4 py-3 text-sm text-stone-600">
+                <details className="mt-6 rounded-xl bg-stone-900/[0.03] px-4 py-3 text-sm text-stone-600 ring-1 ring-stone-900/[0.06]">
                   <summary className="cursor-pointer font-medium text-stone-800">Proposal setup</summary>
-                  <p className="mt-3 border-t border-stone-200/80 pt-3 text-xs leading-relaxed sm:text-sm">
+                  <p className="mt-3 border-t border-stone-200/40 pt-3 text-xs leading-relaxed sm:text-sm">
                     Set <code className="rounded bg-white px-1.5 py-0.5 font-mono text-[0.75em] text-stone-800">RETAINER_CLIENT_NAME</code>{' '}
                     in <span className="font-mono text-[0.8em]">src/data/retainer.ts</span> to the signatory brand (currently “
                     {RETAINER_CLIENT_NAME}”).
@@ -112,16 +120,14 @@ export function RetainerPage() {
                 whileInView="visible"
                 viewport={{ once: true, margin: '-5% 0px' }}
                 variants={viewReveal}
-                className="mt-6 overflow-hidden rounded-2xl border border-stone-200/90 bg-white shadow-[0_28px_70px_-36px_rgba(28,25,23,0.22)]"
+                className="glass-panel-subtle mt-6 overflow-hidden rounded-[1.75rem]"
               >
-                <div className="h-1.5 w-full bg-[#1a3a38]" aria-hidden />
                 <div className="flex flex-col gap-8 px-5 py-8 sm:px-8 sm:py-10 md:flex-row md:items-start md:justify-between md:gap-12">
                   <div className="min-w-0">
                     <p className="text-[0.65rem] font-semibold uppercase tracking-[0.22em] text-stone-500">
                       {RETAINER_MONTHLY.planLabel}
                     </p>
-                    <p className="mt-5 flex flex-wrap items-baseline gap-2 font-display text-3xl font-semibold tabular-nums tracking-tight text-stone-950 sm:text-4xl md:text-5xl">
-                      <span className="mt-1 inline-block h-3 w-3 bg-[#1a3a38]" aria-hidden />
+                    <p className="mt-5 font-display text-3xl font-semibold tabular-nums tracking-tight text-stone-950 sm:text-4xl md:text-5xl">
                       {RETAINER_MONTHLY.amountDisplay}
                     </p>
                     <p className="mt-2 text-sm text-stone-500">{RETAINER_MONTHLY.amountNote}</p>
@@ -144,13 +150,13 @@ export function RetainerPage() {
                 whileInView="visible"
                 viewport={{ once: true, margin: '-5% 0px' }}
                 variants={staggerContainer}
-                className="mt-6 overflow-hidden rounded-2xl border border-stone-200/80 bg-white sm:mt-8"
+                className="mt-6 divide-y divide-stone-200/60 overflow-hidden rounded-[1.25rem] bg-white/55 shadow-[0_24px_60px_-40px_rgb(28_25_23/0.14)] ring-1 ring-white/70 backdrop-blur-sm sm:mt-8"
               >
                 {RETAINER_INCLUDED.map((line, i) => (
                   <motion.li
                     key={line}
                     variants={staggerItem}
-                    className={`flex gap-3 border-b border-stone-100 px-4 py-4 last:border-b-0 sm:gap-4 sm:px-6 sm:py-4 ${i % 2 === 1 ? 'bg-stone-50/90' : ''}`}
+                    className={`flex gap-3 px-4 py-4 sm:gap-4 sm:px-6 sm:py-4 ${i % 2 === 1 ? 'bg-stone-50/35' : ''}`}
                   >
                     <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#1a3a38]/10 text-xs font-semibold text-[#1a3a38]">
                       ✓
@@ -177,7 +183,7 @@ export function RetainerPage() {
                 {RETAINER_SCOPE_ROWS.map((row) => (
                   <article
                     key={row.no}
-                    className="overflow-hidden rounded-2xl border border-stone-200/90 bg-white shadow-sm"
+                    className="overflow-hidden rounded-[1.25rem] bg-white/60 shadow-[0_20px_50px_-36px_rgb(28_25_23/0.14)] ring-1 ring-white/70 backdrop-blur-sm"
                   >
                     <div className="flex items-center gap-3 bg-stone-950 px-4 py-3 text-white">
                       <span className="font-display text-xs font-semibold tabular-nums text-white/60">{row.no}</span>
@@ -193,7 +199,7 @@ export function RetainerPage() {
                 whileInView="visible"
                 viewport={{ once: true, margin: '-5% 0px' }}
                 variants={viewReveal}
-                className="mt-6 hidden overflow-hidden rounded-2xl border border-stone-200/90 bg-white shadow-sm md:block"
+                className="glass-panel-subtle mt-6 hidden overflow-hidden rounded-[1.25rem] md:block"
               >
                 <div className="overflow-x-auto">
                   <table className="w-full min-w-[640px] border-collapse text-left text-sm lg:min-w-0 lg:table-fixed">
@@ -225,12 +231,12 @@ export function RetainerPage() {
                 whileInView="visible"
                 viewport={{ once: true, margin: '-5% 0px' }}
                 variants={viewReveal}
-                className="mt-6 overflow-hidden rounded-2xl border border-stone-200/80 bg-white sm:mt-8"
+                className="mt-6 divide-y divide-stone-200/60 overflow-hidden rounded-[1.25rem] bg-white/55 shadow-[0_24px_60px_-40px_rgb(28_25_23/0.14)] ring-1 ring-white/70 backdrop-blur-sm sm:mt-8"
               >
                 {RETAINER_TERMS.map((row, i) => (
                   <div
                     key={row.label}
-                    className={`grid gap-1 border-b border-stone-100 px-4 py-4 last:border-b-0 sm:grid-cols-[minmax(0,12rem)_1fr] sm:gap-8 sm:px-6 sm:py-5 ${i % 2 === 1 ? 'bg-stone-50/80' : ''}`}
+                    className={`grid gap-1 px-4 py-4 sm:grid-cols-[minmax(0,12rem)_1fr] sm:gap-8 sm:px-6 sm:py-5 ${i % 2 === 1 ? 'bg-stone-50/35' : ''}`}
                   >
                     <dt className="text-sm font-semibold text-stone-900">{row.label}</dt>
                     <dd className="text-sm leading-relaxed text-stone-600">{row.value}</dd>
@@ -250,13 +256,13 @@ export function RetainerPage() {
                 whileInView="visible"
                 viewport={{ once: true, margin: '-5% 0px' }}
                 variants={staggerContainer}
-                className="mt-6 overflow-hidden rounded-2xl border border-stone-200/80 bg-white sm:mt-8"
+                className="mt-6 divide-y divide-stone-200/60 overflow-hidden rounded-[1.25rem] bg-white/55 shadow-[0_24px_60px_-40px_rgb(28_25_23/0.14)] ring-1 ring-white/70 backdrop-blur-sm sm:mt-8"
               >
                 {RETAINER_EXCLUSIONS.map((item, i) => (
                   <motion.li
                     key={item.title}
                     variants={staggerItem}
-                    className={`border-b border-stone-100 px-4 py-4 last:border-b-0 sm:px-6 sm:py-5 ${i % 2 === 1 ? 'bg-stone-50/80' : ''}`}
+                    className={`px-4 py-4 sm:px-6 sm:py-5 ${i % 2 === 1 ? 'bg-stone-50/35' : ''}`}
                   >
                     <p className="flex gap-3 text-sm font-semibold text-stone-900">
                       <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-stone-200/80 text-sm font-light text-stone-500">
@@ -272,7 +278,7 @@ export function RetainerPage() {
 
             <section
               id="retainer-next"
-              className="scroll-mt-32 mt-12 rounded-2xl border border-stone-900/10 bg-stone-950 px-6 py-10 text-white sm:mt-16 sm:px-8 sm:py-12 lg:scroll-mt-36"
+              className="scroll-mt-32 mt-12 rounded-[1.75rem] bg-gradient-to-br from-[#1a2524] via-stone-950 to-[#1a1520] px-6 py-10 text-white shadow-[0_40px_90px_-44px_rgb(0_0_0/0.38)] sm:mt-16 sm:px-8 sm:py-12 lg:scroll-mt-36"
             >
               <motion.div
                 initial="hidden"

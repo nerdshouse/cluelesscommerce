@@ -16,6 +16,10 @@
   --cc-petrol-deep: 18 42 40;
   --cc-brass: 154 132 92;
   --cc-plum: 72 58 88;
+  /* Page wash (for translucent sections) */
+  --cc-wash-top: #faf8f4;
+  --cc-wash-mid: #f3f0ea;
+  --cc-wash-deep: #e8e3db;
 }
 
 * {
@@ -51,10 +55,41 @@ section[id] {
 body {
   margin: 0;
   font-family: var(--font-sans);
-  background: rgb(var(--surface));
+  background-color: var(--cc-wash-top);
   color: #1c1917;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+/* Full-viewport wash — petrol / plum / brass veils over warm stone (no harsh section boxes) */
+.site-atmosphere {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 130% 55% at 50% -18%, rgb(var(--cc-petrol) / 0.07), transparent 58%),
+    radial-gradient(ellipse 52% 42% at 100% 18%, rgb(var(--cc-plum) / 0.06), transparent 52%),
+    radial-gradient(ellipse 48% 38% at 0% 72%, rgb(var(--cc-brass) / 0.07), transparent 50%),
+    radial-gradient(ellipse 70% 50% at 50% 108%, rgb(26 42 40 / 0.05), transparent 55%),
+    linear-gradient(168deg, var(--cc-wash-top) 0%, var(--cc-wash-mid) 45%, var(--cc-wash-deep) 100%);
+}
+
+/* Soft glass panel — minimal chrome vs bordered cards */
+.glass-panel {
+  background: rgb(255 255 255 / 0.52);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 24px 80px -48px rgb(28 25 23 / 0.22);
+  border: 1px solid rgb(255 255 255 / 0.55);
+}
+
+.glass-panel-subtle {
+  background: rgb(255 255 255 / 0.38);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 18px 60px -44px rgb(28 25 23 / 0.16);
+  border: 1px solid rgb(255 255 255 / 0.4);
 }
 
 .font-display {
@@ -91,12 +126,13 @@ body {
   }
 }
 
-/* Hero mesh – warm ink + soft clay (boutique D2C, not flat AI grey) */
+/* Hero mesh – warm ink + soft clay + brand veils */
 .hero-mesh {
   background-image:
-    radial-gradient(ellipse 100% 80% at 50% -28%, rgb(42 38 34 / 0.07), transparent 55%),
-    radial-gradient(ellipse 55% 48% at 88% 18%, rgb(124 45 18 / 0.045), transparent 50%),
-    radial-gradient(ellipse 48% 42% at 12% 58%, rgb(30 58 42 / 0.04), transparent 45%);
+    radial-gradient(ellipse 100% 80% at 50% -28%, rgb(42 38 34 / 0.06), transparent 55%),
+    radial-gradient(ellipse 55% 48% at 88% 18%, rgb(var(--cc-plum) / 0.05), transparent 50%),
+    radial-gradient(ellipse 48% 42% at 12% 58%, rgb(var(--cc-petrol) / 0.055), transparent 45%),
+    radial-gradient(ellipse 40% 35% at 72% 72%, rgb(var(--cc-brass) / 0.04), transparent 50%);
 }
 
 .text-gradient {

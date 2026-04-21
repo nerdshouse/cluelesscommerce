@@ -25,7 +25,7 @@ export function TlcIndustriesWall() {
   return (
     <section
       id="industries"
-      className="scroll-mt-28 relative overflow-hidden border-b border-stone-200 bg-[#faf8f5] py-16 md:py-24"
+      className="scroll-mt-28 relative overflow-hidden bg-transparent py-16 md:py-24"
     >
       <div
         className="pointer-events-none absolute left-1/2 top-0 h-[22rem] w-[min(100%,42rem)] -translate-x-1/2 bg-[radial-gradient(ellipse_at_50%_0%,rgb(45_95_88/0.11),transparent_58%),radial-gradient(ellipse_at_42%_22%,rgb(72_58_88/0.09),transparent_56%)]"
@@ -38,7 +38,7 @@ export function TlcIndustriesWall() {
           whileInView="visible"
           viewport={{ once: true, margin: '-8% 0px' }}
           variants={viewReveal}
-          className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 border-b border-stone-200/80 pb-10 md:gap-x-14"
+          className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 pb-10 md:gap-x-14"
         >
           {TLC_METRICS_STRIP.map((m) => (
             <div key={m.label} className="text-center">
@@ -75,7 +75,7 @@ export function TlcIndustriesWall() {
         >
           {TLC_INDUSTRY_PILLS.map((label, i) => (
             <motion.li key={label} variants={staggerItem}>
-              <span className="inline-flex items-center gap-2 rounded-full border border-stone-200/90 bg-white px-4 py-2.5 text-sm text-stone-800 shadow-sm transition hover:border-stone-300 hover:shadow">
+              <span className="inline-flex items-center gap-2 rounded-full bg-white/55 px-4 py-2.5 text-sm text-stone-800 shadow-[0_12px_40px_-28px_rgb(28_25_23/0.12)] ring-1 ring-white/70 backdrop-blur-sm transition hover:bg-white/70">
                 <StarIcon className={STAR_TINTS[i % STAR_TINTS.length]} />
                 {label}
               </span>

@@ -29,8 +29,16 @@ export function ServicesHub() {
   const filtered = useMemo(() => SERVICE_PAGES.filter((s) => matchesQuery(s, query)), [query])
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[#ebe6df] via-[#f3efe8] to-[#ebe6df] pt-20 pb-14 sm:pt-24 md:pt-28 md:pb-20">
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-white/70 to-transparent" aria-hidden />
+    <main className="relative min-h-screen bg-transparent pt-20 pb-14 sm:pt-24 md:pt-28 md:pb-20">
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.85]"
+        aria-hidden
+        style={{
+          backgroundImage:
+            'radial-gradient(ellipse 65% 50% at 50% -10%, rgb(26 58 54 / 0.07), transparent 55%), radial-gradient(ellipse 45% 40% at 100% 40%, rgb(154 132 92 / 0.06), transparent 50%), linear-gradient(175deg, rgb(250 248 244 / 0.9) 0%, rgb(241 237 230) 50%, rgb(232 227 219) 100%)',
+        }}
+      />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-56 bg-gradient-to-b from-white/45 to-transparent" aria-hidden />
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <motion.header
@@ -73,7 +81,7 @@ export function ServicesHub() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search by name, channel, or deliverable…"
-              className="w-full rounded-2xl border border-stone-200/90 bg-white/95 py-3.5 pl-12 pr-4 text-sm text-stone-900 shadow-sm outline-none ring-stone-900/0 transition placeholder:text-stone-400 focus:border-stone-400 focus:ring-2 focus:ring-stone-900/10 sm:py-4 sm:text-[0.9375rem]"
+              className="w-full rounded-full border-0 bg-white/55 py-3.5 pl-12 pr-5 text-sm text-stone-900 shadow-[0_20px_50px_-36px_rgb(28_25_23/0.18)] outline-none ring-1 ring-white/80 backdrop-blur-md transition placeholder:text-stone-400 focus:ring-2 focus:ring-stone-900/15 sm:py-4 sm:text-[0.9375rem]"
             />
           </div>
         </motion.div>
@@ -99,7 +107,7 @@ export function ServicesHub() {
                 <motion.li key={s.slug} variants={staggerItem} className="flex min-h-full">
                   <Link
                     to={`/services/${s.slug}`}
-                    className="group flex min-h-full w-full flex-col overflow-hidden rounded-2xl border border-stone-200/90 bg-white/95 shadow-[0_20px_50px_-36px_rgba(28,25,23,0.18)] transition hover:-translate-y-0.5 hover:border-stone-300 hover:shadow-[0_28px_60px_-32px_rgba(28,25,23,0.22)]"
+                    className="group flex min-h-full w-full flex-col overflow-hidden rounded-[1.65rem] bg-white/50 shadow-[0_28px_70px_-42px_rgb(28_25_23/0.2)] ring-1 ring-white/70 backdrop-blur-md transition hover:bg-white/60 hover:shadow-[0_36px_80px_-40px_rgb(28_25_23/0.24)]"
                   >
                     <div className={`h-1 w-full ${v.stripe}`} aria-hidden />
                     <div className="flex flex-1 flex-col p-5 sm:p-6">
@@ -116,7 +124,7 @@ export function ServicesHub() {
                       {s.priceLine ? (
                         <p className="mt-4 line-clamp-2 text-xs leading-relaxed text-stone-500">{s.priceLine}</p>
                       ) : null}
-                      <span className="mt-auto inline-flex items-center gap-2 border-t border-stone-100 pt-4 text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-stone-900">
+                      <span className="mt-auto inline-flex items-center gap-2 pt-5 text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-stone-900">
                         View scope
                         <svg className="h-4 w-4 transition group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -137,7 +145,7 @@ export function ServicesHub() {
           variants={viewReveal}
           className="mx-auto mt-12 max-w-3xl sm:mt-16"
         >
-          <div className="overflow-hidden rounded-2xl border border-stone-200/90 bg-stone-950 px-5 py-8 text-white sm:px-8 sm:py-10">
+          <div className="overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-[#1a2524] via-stone-950 to-[#1a1520] px-5 py-8 text-white shadow-[0_40px_90px_-44px_rgb(0_0_0/0.35)] sm:px-8 sm:py-10">
             <p className="text-[0.65rem] font-semibold uppercase tracking-[0.22em] text-stone-400">Bundle</p>
             <h2 className="mt-2 font-display text-2xl font-medium tracking-tight sm:text-3xl">Monthly retainer</h2>
             <p className="mt-4 max-w-prose text-sm leading-relaxed text-stone-300 sm:text-base">

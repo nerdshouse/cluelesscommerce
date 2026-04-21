@@ -22,7 +22,7 @@ export function Header() {
     >
       <div className="relative mx-auto max-w-5xl">
         <div
-          className="pointer-events-auto flex items-center gap-2 rounded-full border border-stone-300/90 bg-[color:rgb(255_255_255/0.88)] px-2.5 py-2 shadow-[0_12px_40px_-12px_rgb(0_0_0/0.12)] backdrop-blur-xl sm:px-4 md:px-5 md:py-2.5"
+          className="pointer-events-auto flex items-center gap-2 rounded-full border border-white/60 bg-[color:rgb(255_255_255/0.72)] px-2.5 py-2 shadow-[0_20px_50px_-24px_rgb(28_25_23/0.14)] backdrop-blur-2xl sm:px-4 md:px-5 md:py-2.5"
         >
           <Link
             to="/"
@@ -37,7 +37,7 @@ export function Header() {
               <Link
                 key={label}
                 to={to}
-                className="rounded-full px-3 py-2 text-xs font-medium text-stone-600 transition hover:bg-black/[0.06] hover:text-black lg:text-sm"
+                className="rounded-full px-3 py-2 text-xs font-medium text-stone-600 transition hover:bg-stone-900/[0.06] hover:text-stone-950 lg:text-sm"
               >
                 {label}
               </Link>
@@ -61,20 +61,20 @@ export function Header() {
             aria-label="Menu"
             aria-expanded={open}
           >
-            <span className={`h-0.5 w-5 rounded-full bg-black transition ${open ? 'translate-y-1.5 rotate-45' : ''}`} />
-            <span className={`h-0.5 w-5 rounded-full bg-black transition ${open ? 'opacity-0' : ''}`} />
-            <span className={`h-0.5 w-5 rounded-full bg-black transition ${open ? '-translate-y-1.5 -rotate-45' : ''}`} />
+            <span className={`h-0.5 w-5 rounded-full bg-stone-900 transition ${open ? 'translate-y-1.5 rotate-45' : ''}`} />
+            <span className={`h-0.5 w-5 rounded-full bg-stone-900 transition ${open ? 'opacity-0' : ''}`} />
+            <span className={`h-0.5 w-5 rounded-full bg-stone-900 transition ${open ? '-translate-y-1.5 -rotate-45' : ''}`} />
           </button>
         </div>
 
         <AnimatePresence>
           {open && (
             <motion.div
-              initial={{ opacity: 0, y: -6, scale: 0.99 }}
+              initial={{ opacity: 0, y: 8, scale: 0.99 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -6, scale: 0.99 }}
+              exit={{ opacity: 0, y: 8, scale: 0.99 }}
               transition={{ duration: 0.2 }}
-              className="pointer-events-auto absolute left-0 right-0 top-[calc(100%+0.5rem)] z-40 max-h-[min(85vh,calc(100dvh-6rem))] overflow-y-auto rounded-2xl border border-stone-200/90 bg-white p-3 shadow-xl backdrop-blur-xl md:hidden"
+              className="pointer-events-auto absolute left-0 right-0 top-[calc(100%+0.5rem)] z-40 max-h-[min(85vh,calc(100dvh-6rem))] overflow-y-auto rounded-2xl border border-white/70 bg-white/85 p-3 shadow-[0_24px_60px_-20px_rgb(28_25_23/0.18)] backdrop-blur-2xl md:hidden"
             >
               <nav className="flex flex-col gap-0.5">
                 {LINKS.map(({ label, to }) => (

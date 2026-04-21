@@ -16,7 +16,7 @@ const SOLUTIONS = [
 export function ProblemSolution() {
   return (
     <section id="approach" className="relative overflow-hidden bg-stone-50 py-24 md:py-32">
-      <div className="pointer-events-none absolute right-0 top-0 h-96 w-96 rounded-full bg-black/[0.04] blur-[100px]" aria-hidden />
+      <div className="pointer-events-none absolute right-0 top-0 h-96 w-96 rounded-full bg-stone-400/12 blur-[100px]" aria-hidden />
       <div className="relative mx-auto max-w-6xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -74,7 +74,7 @@ export function ProblemSolution() {
             className="rounded-3xl border border-stone-900/15 bg-gradient-to-br from-stone-100 via-white to-stone-50 p-8 shadow-sm md:p-10"
           >
             <div className="flex items-center gap-3">
-              <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-black text-white">
+              <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-stone-900 text-white">
                 <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
               </span>
               <div>
@@ -95,7 +95,7 @@ export function ProblemSolution() {
                   variants={staggerItem}
                   className="flex gap-3 text-stone-800"
                 >
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-black" />
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-stone-500" />
                   <span className="leading-relaxed">{t}</span>
                 </motion.li>
               ))}

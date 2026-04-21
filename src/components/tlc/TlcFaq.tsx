@@ -7,7 +7,7 @@ export function TlcFaq() {
   const [open, setOpen] = useState<number | null>(0)
 
   return (
-    <section id="faq" className="scroll-mt-28 border-b border-stone-200 bg-white py-20 md:py-28">
+    <section id="faq" className="scroll-mt-28 bg-transparent py-20 md:py-28">
       <div className="mx-auto max-w-2xl px-6">
         <motion.div
           initial="hidden"
@@ -21,7 +21,7 @@ export function TlcFaq() {
             Frequently asked
           </h2>
         </motion.div>
-        <ul className="mt-12 divide-y divide-stone-200 border-t border-stone-200">
+        <ul className="mt-12 divide-y divide-stone-200/70">
           {TLC_FAQ.map((item, i) => {
             const isOpen = open === i
             return (

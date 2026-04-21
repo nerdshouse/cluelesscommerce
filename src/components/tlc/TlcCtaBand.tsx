@@ -11,7 +11,7 @@ const CALL_TYPES = [
 
 function AvatarRow({ initials }: { initials: readonly string[] }) {
   return (
-    <div className="mt-4 flex -space-x-1.5">
+    <div className="mt-4 flex gap-1.5">
       {initials.map((ch) => (
         <span
           key={ch}
@@ -26,7 +26,7 @@ function AvatarRow({ initials }: { initials: readonly string[] }) {
 
 function CallTypeCard({ title, initials }: { title: string; initials: readonly string[] }) {
   return (
-    <div className="rounded-2xl border border-stone-200/90 bg-white/95 p-5 shadow-[0_12px_40px_-20px_rgba(28,25,23,0.15)] backdrop-blur-sm">
+    <div className="rounded-2xl bg-white/45 p-5 shadow-[0_20px_50px_-36px_rgb(28_25_23/0.14)] ring-1 ring-white/60 backdrop-blur-md">
       <p className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-stone-500">{title}</p>
       <AvatarRow initials={initials} />
     </div>
@@ -35,7 +35,7 @@ function CallTypeCard({ title, initials }: { title: string; initials: readonly s
 
 function VideoCallMock() {
   return (
-    <div className="relative mx-auto w-full max-w-lg overflow-hidden rounded-[1.75rem] border border-stone-200/90 bg-stone-950 shadow-[0_32px_80px_-28px_rgba(0,0,0,0.35)]">
+    <div className="relative mx-auto w-full max-w-lg overflow-hidden rounded-[1.75rem] bg-stone-950 shadow-[0_40px_90px_-36px_rgb(0_0_0/0.4)] ring-1 ring-white/10">
       <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
         <span className="text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-white/70">Discovery call</span>
         <span className="h-2 w-2 rounded-full bg-[#5c8f86]/95" aria-hidden />
@@ -82,7 +82,7 @@ function VideoCallMock() {
 
 export function TlcCtaBand() {
   return (
-    <section id="cta" className="scroll-mt-28 border-b border-stone-200 forward-section-glow bg-[#faf8f5] py-20 md:py-28">
+    <section id="cta" className="scroll-mt-28 forward-section-glow bg-transparent py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-6">
         <motion.div
           initial="hidden"
@@ -118,7 +118,7 @@ export function TlcCtaBand() {
           </div>
 
           <motion.div variants={staggerItem} className="relative z-[1] w-full max-w-lg shrink-0 lg:mx-2">
-            <div className="pointer-events-none absolute -inset-4 rounded-[2rem] bg-gradient-to-b from-teal-900/12 via-transparent to-indigo-950/14 blur-2xl md:-inset-8" aria-hidden />
+            <div className="pointer-events-none absolute inset-0 rounded-[2rem] bg-gradient-to-b from-teal-900/12 via-transparent to-indigo-950/14 blur-2xl md:inset-0" aria-hidden />
             <VideoCallMock />
           </motion.div>
 

@@ -6,8 +6,12 @@ const ease = [0.22, 1, 0.36, 1] as const
 
 export function TlcHero() {
   return (
-    <section className="relative overflow-hidden border-b border-stone-200 bg-white pb-20 pt-8 md:pb-28 md:pt-6">
-      <div className="pointer-events-none absolute inset-0 hero-mesh opacity-80" aria-hidden />
+    <section className="relative overflow-hidden bg-transparent pb-20 pt-8 md:pb-28 md:pt-6">
+      <div className="pointer-events-none absolute inset-0 hero-mesh opacity-[0.92]" aria-hidden />
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[rgb(250_248_244/0.85)] to-transparent"
+        aria-hidden
+      />
       <div className="relative mx-auto max-w-5xl px-6 text-center">
         <motion.p
           initial={{ opacity: 0, y: 8 }}

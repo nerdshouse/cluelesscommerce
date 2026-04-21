@@ -11,7 +11,7 @@ const STEPS = [
 
 export function TlcProcess() {
   return (
-    <section id="process" className="scroll-mt-28 border-b border-stone-200 bg-white py-20 md:py-24">
+    <section id="process" className="scroll-mt-28 bg-transparent py-20 md:py-24">
       <motion.div
         initial="hidden"
         whileInView="visible"
