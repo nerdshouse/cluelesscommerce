@@ -11,6 +11,11 @@
   --surface: 250 248 245;
   --surface-muted: 245 242 236;
   --glow: 64 64 64;
+  /* Brand accents — petrol + brass + dusk (distinct from typical orange/coral agency palettes) */
+  --cc-petrol: 26 58 54;
+  --cc-petrol-deep: 18 42 40;
+  --cc-brass: 154 132 92;
+  --cc-plum: 72 58 88;
 }
 
 * {
@@ -101,9 +106,15 @@ body {
   color: transparent;
 }
 
-/* Accent headline — warm coral to rose (schedule / industries highlights) */
+/* Accent headline — deep petrol through brass (editorial, not orange/coral) */
 .text-gradient-accent {
-  background: linear-gradient(95deg, #c2410c 0%, #ea580c 42%, #e11d48 78%, #c2410c 100%);
+  background: linear-gradient(
+    100deg,
+    rgb(var(--cc-petrol-deep)) 0%,
+    rgb(var(--cc-petrol)) 38%,
+    rgb(var(--cc-brass)) 72%,
+    rgb(28 62 58) 100%
+  );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -111,8 +122,17 @@ body {
 
 .forward-section-glow {
   background-image:
-    radial-gradient(ellipse 55% 45% at 12% 40%, rgb(251 146 60 / 0.14), transparent 55%),
-    radial-gradient(ellipse 50% 42% at 88% 55%, rgb(125 211 252 / 0.12), transparent 50%);
+    radial-gradient(ellipse 58% 48% at 10% 35%, rgb(71 92 84 / 0.14), transparent 56%),
+    radial-gradient(ellipse 52% 44% at 90% 60%, rgb(var(--cc-plum) / 0.11), transparent 52%);
+}
+
+/* Horizontal scroll chips (in-page nav) without visible scrollbar */
+.scroll-chips {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scroll-chips::-webkit-scrollbar {
+  display: none;
 }
 
 .btn-shine {

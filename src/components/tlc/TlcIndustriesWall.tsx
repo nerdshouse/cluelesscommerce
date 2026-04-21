@@ -3,14 +3,14 @@ import { TLC_INDUSTRY_PILLS, TLC_METRICS_STRIP } from './data'
 import { staggerContainer, staggerItem, viewReveal } from '../../lib/motion'
 
 const STAR_TINTS = [
-  'text-rose-500',
-  'text-emerald-500',
-  'text-sky-500',
-  'text-amber-500',
-  'text-violet-500',
-  'text-orange-500',
-  'text-teal-500',
-  'text-fuchsia-500',
+  'text-teal-800',
+  'text-slate-600',
+  'text-[#6d5a3e]',
+  'text-indigo-800',
+  'text-stone-600',
+  'text-cyan-900',
+  'text-[#4a5d4a]',
+  'text-violet-950',
 ]
 
 function StarIcon({ className }: { className: string }) {
@@ -28,7 +28,7 @@ export function TlcIndustriesWall() {
       className="scroll-mt-28 relative overflow-hidden border-b border-stone-200 bg-[#faf8f5] py-16 md:py-24"
     >
       <div
-        className="pointer-events-none absolute left-1/2 top-0 h-[22rem] w-[min(100%,42rem)] -translate-x-1/2 bg-[radial-gradient(ellipse_at_50%_0%,rgb(251_113_133/0.12),transparent_58%),radial-gradient(ellipse_at_40%_20%,rgb(251_146_60/0.1),transparent_55%)]"
+        className="pointer-events-none absolute left-1/2 top-0 h-[22rem] w-[min(100%,42rem)] -translate-x-1/2 bg-[radial-gradient(ellipse_at_50%_0%,rgb(45_95_88/0.11),transparent_58%),radial-gradient(ellipse_at_42%_22%,rgb(72_58_88/0.09),transparent_56%)]"
         aria-hidden
       />
 
@@ -92,7 +92,7 @@ export function TlcIndustriesWall() {
         >
           <a
             href="#lead"
-            className="inline-flex min-h-[2.75rem] items-center justify-center rounded-full bg-gradient-to-r from-orange-500 to-rose-500 px-10 text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-white shadow-md transition hover:opacity-95"
+            className="inline-flex min-h-[2.75rem] items-center justify-center rounded-full bg-[#1a3a38] px-10 text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-white shadow-md transition hover:bg-[#142e2c]"
           >
             Get in touch
           </a>

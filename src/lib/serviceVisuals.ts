@@ -20,12 +20,12 @@ const DEFAULT: ServiceVisualAccent = {
 
 const BY_SLUG: Record<string, ServiceVisualAccent> = {
   'social-media': {
-    stripe: 'bg-[#9a6b2f]',
-    badge: 'bg-amber-100/95 text-amber-950 ring-1 ring-amber-900/10',
-    pointCard: 'border-amber-900/12 bg-amber-50/40',
-    cta: 'bg-[#7a4f24]',
-    ctaHover: 'hover:bg-[#5c3b1a]',
-    wash: 'from-amber-200/35',
+    stripe: 'bg-[#39465c]',
+    badge: 'bg-indigo-100/95 text-indigo-950 ring-1 ring-indigo-900/10',
+    pointCard: 'border-indigo-900/12 bg-indigo-50/45',
+    cta: 'bg-[#2f3850]',
+    ctaHover: 'hover:bg-[#252c3d]',
+    wash: 'from-indigo-200/24',
   },
   performance: {
     stripe: 'bg-[#2f4a3c]',
@@ -36,12 +36,12 @@ const BY_SLUG: Record<string, ServiceVisualAccent> = {
     wash: 'from-emerald-200/30',
   },
   'development-ui-ux': {
-    stripe: 'bg-[#6b2d3c]',
-    badge: 'bg-rose-100/95 text-rose-950 ring-1 ring-rose-900/10',
-    pointCard: 'border-rose-900/12 bg-rose-50/35',
-    cta: 'bg-[#5c2834]',
-    ctaHover: 'hover:bg-[#451f28]',
-    wash: 'from-rose-200/28',
+    stripe: 'bg-[#3d4a48]',
+    badge: 'bg-[#e4ebe9]/95 text-[#1e2c2a] ring-1 ring-[#3d4a48]/12',
+    pointCard: 'border-[#3d4a48]/15 bg-[#f0f5f3]/90',
+    cta: 'bg-[#2a3836]',
+    ctaHover: 'hover:bg-[#1f2a28]',
+    wash: 'from-teal-200/22',
   },
   'ai-solutions': {
     stripe: 'bg-[#3d4a5c]',
@@ -52,12 +52,12 @@ const BY_SLUG: Record<string, ServiceVisualAccent> = {
     wash: 'from-slate-300/25',
   },
   consultancy: {
-    stripe: 'bg-[#4a3f35]',
-    badge: 'bg-orange-50/95 text-stone-900 ring-1 ring-stone-800/10',
-    pointCard: 'border-stone-600/15 bg-orange-50/30',
-    cta: 'bg-[#3d342c]',
-    ctaHover: 'hover:bg-[#2e2721]',
-    wash: 'from-orange-200/25',
+    stripe: 'bg-[#3d4a52]',
+    badge: 'bg-stone-100/95 text-stone-900 ring-1 ring-stone-800/10',
+    pointCard: 'border-stone-600/15 bg-[#ede9e2]/90',
+    cta: 'bg-[#2c3538]',
+    ctaHover: 'hover:bg-[#232b2e]',
+    wash: 'from-stone-300/22',
   },
 }
 

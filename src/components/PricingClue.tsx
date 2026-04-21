@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { openCalComPopup } from '../lib/cal'
 
@@ -31,6 +32,19 @@ export function PricingClue() {
         >
           <span className="font-medium text-stone-100">USD $1,500 per month</span> for the full programme on this site.
           {' '}No long lock-in.
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-10% 0px' }}
+          transition={{ duration: 0.4, delay: 0.08, ease }}
+          className="mx-auto mt-5 max-w-2xl text-sm text-stone-500"
+        >
+          India retainer scope (six verticals, terms & exclusions):{' '}
+          <Link to="/retainer" className="font-medium text-stone-200 underline decoration-stone-600 underline-offset-4 transition hover:text-white hover:decoration-stone-300">
+            View programme
+          </Link>
+          .
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 10 }}

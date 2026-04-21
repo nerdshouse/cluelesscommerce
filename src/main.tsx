@@ -7,6 +7,7 @@ import { ScrollToTop } from './components/ScrollToTop'
 import { Home } from './pages/Home'
 import { ServicesHub } from './pages/ServicesHub'
 import { ServicePage } from './pages/ServicePage'
+import { RetainerPage } from './pages/RetainerPage'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -16,6 +17,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/" element={<Layout><Home /></Layout>} />
         <Route path="/services" element={<Layout><ServicesHub /></Layout>} />
         <Route path="/services/:slug" element={<Layout><ServicePage /></Layout>} />
+        <Route path="/retainer" element={<Layout><RetainerPage /></Layout>} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,

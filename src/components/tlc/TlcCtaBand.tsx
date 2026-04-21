@@ -38,7 +38,7 @@ function VideoCallMock() {
     <div className="relative mx-auto w-full max-w-lg overflow-hidden rounded-[1.75rem] border border-stone-200/90 bg-stone-950 shadow-[0_32px_80px_-28px_rgba(0,0,0,0.35)]">
       <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
         <span className="text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-white/70">Discovery call</span>
-        <span className="h-2 w-2 rounded-full bg-emerald-500/90" aria-hidden />
+        <span className="h-2 w-2 rounded-full bg-[#5c8f86]/95" aria-hidden />
       </div>
       <div className="grid gap-2 p-3 sm:grid-cols-[1fr_minmax(0,7.5rem)] sm:gap-3">
         <div className="relative flex aspect-[4/3] min-h-[11rem] flex-col justify-end overflow-hidden rounded-xl bg-gradient-to-br from-stone-600 via-stone-800 to-stone-950 sm:aspect-video sm:min-h-0">
@@ -56,7 +56,7 @@ function VideoCallMock() {
             </button>
             <a
               href="#lead"
-              className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-orange-500 to-rose-500 px-4 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.08em] text-white shadow-md transition hover:opacity-95"
+              className="inline-flex items-center justify-center rounded-full bg-[#1a3a38] px-4 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.08em] text-white shadow-md transition hover:bg-[#142e2c]"
             >
               Get in touch
             </a>
@@ -64,8 +64,8 @@ function VideoCallMock() {
         </div>
         <div className="flex flex-row gap-2 sm:flex-col">
           {[
-            { name: 'Anushka G.', tone: 'from-rose-900/40 to-stone-900' },
-            { name: 'Kavita U.', tone: 'from-sky-900/40 to-stone-900' },
+            { name: 'Anushka G.', tone: 'from-[#3d2f28]/85 to-stone-900' },
+            { name: 'Kavita U.', tone: 'from-[#1e3538]/90 to-stone-900' },
           ].map((p) => (
             <div
               key={p.name}
@@ -118,7 +118,7 @@ export function TlcCtaBand() {
           </div>
 
           <motion.div variants={staggerItem} className="relative z-[1] w-full max-w-lg shrink-0 lg:mx-2">
-            <div className="pointer-events-none absolute -inset-4 rounded-[2rem] bg-gradient-to-b from-orange-200/20 via-transparent to-sky-200/15 blur-2xl md:-inset-8" aria-hidden />
+            <div className="pointer-events-none absolute -inset-4 rounded-[2rem] bg-gradient-to-b from-teal-900/12 via-transparent to-indigo-950/14 blur-2xl md:-inset-8" aria-hidden />
             <VideoCallMock />
           </motion.div>
 

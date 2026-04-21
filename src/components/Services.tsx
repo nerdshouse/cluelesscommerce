@@ -61,7 +61,7 @@ export function Services() {
                 ))}
               </ul>
               <div className="mt-6 flex flex-wrap items-center justify-between gap-3 border-t border-dashed border-stone-200/90 pt-5 text-xs text-stone-500">
-                <span>{service.timeline}</span>
+                <span className="font-medium text-stone-700">{service.deliveryHighlight}</span>
                 <span className="rounded-full bg-stone-100 px-2.5 py-1 font-medium text-stone-800">{service.engagement}</span>
               </div>
               <Link

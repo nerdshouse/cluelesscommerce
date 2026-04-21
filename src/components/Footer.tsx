@@ -2,13 +2,11 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
 const QUICK: { label: string; to: string }[] = [
-  { label: 'Services', to: '/#services-tlc' },
-  { label: 'Industries', to: '/#industries' },
-  { label: 'Process', to: '/#process' },
-  { label: 'Reviews', to: '/#reviews' },
-  { label: 'FAQ', to: '/#faq' },
+  { label: 'Services', to: '/services' },
   { label: 'Pricing', to: '/#pricing-clue' },
+  { label: 'FAQ', to: '/#faq' },
   { label: 'Contact', to: '/#contact' },
+  { label: 'Enquire', to: '/#lead' },
 ]
 
 export function Footer() {
@@ -26,7 +24,7 @@ export function Footer() {
         <p className="mx-auto mt-6 max-w-xl text-center text-sm leading-relaxed text-stone-500">
           DTC landing pages, storefront builds, and CRO - structure inspired by leading conversion-led studios.
         </p>
-        <div className="mt-10 grid gap-10 md:grid-cols-[1.2fr,1fr,1fr]">
+        <div className="mt-10 grid gap-10 sm:grid-cols-2 md:grid-cols-[1.2fr,1fr,1fr]">
           <div>
             <p className="font-display text-lg font-semibold text-white">Conversion-led D2C</p>
             <p className="mt-3 text-sm leading-relaxed text-stone-400">
@@ -42,7 +40,6 @@ export function Footer() {
                   {label}
                 </Link>
               ))}
-              <Link to="/services" className="transition hover:text-white">All service pages</Link>
             </nav>
           </div>
           <div>

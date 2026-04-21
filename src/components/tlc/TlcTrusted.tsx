@@ -6,7 +6,7 @@ export function TlcTrusted() {
   const row = [...labels, ...labels]
 
   return (
-    <section className="border-b border-stone-200 bg-white py-14">
+    <section id="trusted" className="scroll-mt-28 border-b border-stone-200 bg-white py-14">
       <motion.div
         initial="hidden"
         whileInView="visible"
