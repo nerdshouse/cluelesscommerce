@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Inspired by thewholetruthfoods.com: narrow display (Obviously Narrow), UI (Poppins), mono (IBM Plex), accent (Gooddog → Caveat) */
+  --font-display: 'Barlow Condensed', system-ui, sans-serif;
+  --font-sans: 'Poppins', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --font-accent: 'Caveat', cursive;
+  --surface: 250 248 245;
+  --surface-muted: 245 242 236;
+  --glow: 64 64 64;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 6.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .marquee-track {
+    animation: none !important;
+    transform: translateX(0);
+  }
+
+  .animate-blob,
+  .animate-blob-delayed,
+  .animate-float,
+  .animate-shimmer {
+    animation: none !important;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: rgb(var(--surface));
+  color: #1c1917;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.font-display {
+  letter-spacing: -0.02em;
+}
+
+/* Marquee – duplicate content so 50% translate gives seamless loop */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.marquee-track-slow {
+  animation-duration: 50s;
+}
+
+.marquee-track-fast {
+  animation-duration: 25s;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-wrap:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-wrap:hover .marquee-track {
+    animation-play-state: running;
+  }
+}
+
+/* Hero mesh – warm ink + soft clay (boutique D2C, not flat AI grey) */
+.hero-mesh {
+  background-image:
+    radial-gradient(ellipse 100% 80% at 50% -28%, rgb(42 38 34 / 0.07), transparent 55%),
+    radial-gradient(ellipse 55% 48% at 88% 18%, rgb(124 45 18 / 0.045), transparent 50%),
+    radial-gradient(ellipse 48% 42% at 12% 58%, rgb(30 58 42 / 0.04), transparent 45%);
+}
+
+.text-gradient {
+  background: linear-gradient(105deg, #0a0a0a 0%, #404040 55%, #171717 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Accent headline — warm coral to rose (schedule / industries highlights) */
+.text-gradient-accent {
+  background: linear-gradient(95deg, #c2410c 0%, #ea580c 42%, #e11d48 78%, #c2410c 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.forward-section-glow {
+  background-image:
+    radial-gradient(ellipse 55% 45% at 12% 40%, rgb(251 146 60 / 0.14), transparent 55%),
+    radial-gradient(ellipse 50% 42% at 88% 55%, rgb(125 211 252 / 0.12), transparent 50%);
+}
+
+.btn-shine {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: btnShine 2.5s ease-in-out infinite;
+}
+
+@keyframes btnShine {
+  0% { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-shine {
+    animation: none;
+  }
+}
