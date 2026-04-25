@@ -1,11 +1,18 @@
 /** TLC-style section content (structure inspired by thelandingpagecompany.com; brand: Clueless Commerce) */
 
-/** Hero eyebrow + supporting line (homepage). */
+/** Hero copy — bridge line + trust hint echo clear agency landers (e.g. boco.agency: utility-first, proof-adjacent). */
 export const TLC_HERO_COPY = {
-  eyebrow: 'Scaled over 10+ brands',
-  subline: 'Experience across all major niches',
+  eyebrow: 'Scaled across 10+ brands',
+  /** One sentence between headline and detail (like a “guide your journey” line). */
+  bridgeLine:
+    'Landing pages, Shopify, and CRO—owned end to end so experiments compound instead of working against each other.',
+  subline: 'Experience across major D2C verticals',
+  /** Short trust strip (keep factual; adjust if your numbers change). */
+  trustHint: 'Design-led delivery · performance-minded handoffs',
+  accentLine: 'A fresh take on your customer journey.',
 } as const
 
+/** Homepage capability grid — six lanes read as a “build stack” (design / dev / growth), similar framing to boco.agency partners section. */
 export const TLC_SERVICES: { num: string; title: string; body: string }[] = [
   {
     num: '01',

@@ -33,23 +33,39 @@ export function TlcHero() {
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1, duration: 0.4, ease }}
-          className="mt-5 font-sans text-lg text-stone-600 md:text-xl"
+          transition={{ delay: 0.08, duration: 0.42, ease }}
+          className="mx-auto mt-5 max-w-2xl text-pretty font-sans text-base leading-relaxed text-stone-600 md:text-lg"
+        >
+          {TLC_HERO_COPY.bridgeLine}
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.12, duration: 0.38, ease }}
+          className="mt-3 text-[0.7rem] font-medium uppercase tracking-[0.2em] text-stone-500"
+        >
+          {TLC_HERO_COPY.trustHint}
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.14, duration: 0.4, ease }}
+          className="mt-4 font-sans text-lg text-stone-600 md:text-xl"
         >
           {TLC_HERO_COPY.subline}
         </motion.p>
         <motion.p
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.16, duration: 0.4, ease }}
+          transition={{ delay: 0.18, duration: 0.4, ease }}
           className="mt-3 font-accent text-2xl font-semibold leading-snug text-stone-800 md:text-3xl"
         >
-          A fresh take on your customer journey.
+          {TLC_HERO_COPY.accentLine}
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.22, duration: 0.4, ease }}
+          transition={{ delay: 0.24, duration: 0.4, ease }}
           className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4"
         >
           <button

@@ -13,10 +13,13 @@ export function TlcServicesFive() {
           variants={viewReveal}
           className="text-center"
         >
-          <p className="text-[0.65rem] font-semibold uppercase tracking-[0.32em] text-stone-400">Capabilities</p>
+          <p className="text-[0.65rem] font-semibold uppercase tracking-[0.32em] text-stone-400">Build stack</p>
           <h2 className="mt-4 font-display text-3xl font-medium tracking-tight text-stone-900 md:text-4xl">
             How we work with brands
           </h2>
+          <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-stone-500 md:text-base">
+            Research, build, and optimize—one partner so landings, PDPs, and tests stay aligned.
+          </p>
         </motion.div>
         <motion.ul
           variants={staggerContainer}

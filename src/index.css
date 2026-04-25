@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
-  /* Inspired by thewholetruthfoods.com: narrow display (Obviously Narrow), UI (Poppins), mono (IBM Plex), accent (Gooddog → Caveat) */
+  /* Display: Barlow Condensed. UI: Inter (crisp, product-site legibility — similar intent to modern GTM sites). */
   --font-display: 'Barlow Condensed', system-ui, sans-serif;
-  --font-sans: 'Poppins', system-ui, sans-serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
   --font-accent: 'Caveat', cursive;
   --surface: 250 248 245;
@@ -57,8 +57,18 @@ body {
   font-family: var(--font-sans);
   background-color: var(--cc-wash-top);
   color: #1c1917;
+  font-optical-sizing: auto;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+}
+
+/* Large display type: crisp edges on supported engines */
+h1,
+h2,
+h3,
+.font-display {
+  text-rendering: geometricPrecision;
 }
 
 /* Full-viewport wash — petrol / plum / brass veils over warm stone (no harsh section boxes) */
@@ -93,7 +103,7 @@ body {
 }
 
 .font-display {
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
 }
 
 /* Marquee – duplicate content so 50% translate gives seamless loop */

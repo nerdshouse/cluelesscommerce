@@ -35,6 +35,8 @@ export function ServicePage() {
   }
 
   const accent = getServiceVisuals(service.slug)
+  const keyFeaturesLeft = service.keyFeatures.slice(0, 3)
+  const keyFeaturesRight = service.keyFeatures.slice(3, 5)
 
   return (
     <main
@@ -92,24 +94,37 @@ export function ServicePage() {
           className="mt-10 sm:mt-12"
         >
           <SectionHeading>Key features</SectionHeading>
-          <motion.ul
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-4% 0px' }}
-            className="mt-6 grid gap-5 sm:mt-8 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-8"
-          >
-            {service.keyFeatures.map((f) => (
-              <motion.li
-                key={f.title}
-                variants={staggerItem}
-                className={`rounded-2xl p-4 sm:p-5 ${accent.pointCard}`}
-              >
-                <p className="font-display text-base font-medium text-stone-900">{f.title}</p>
-                <p className="mt-2 text-sm leading-relaxed text-stone-600">{f.body}</p>
-              </motion.li>
-            ))}
-          </motion.ul>
+          <div className="mt-6 flex flex-col sm:mt-8 sm:flex-row sm:items-stretch">
+            <motion.ul
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-4% 0px' }}
+              className="min-w-0 flex-1 divide-y divide-stone-300/60 sm:pr-8 md:pr-12"
+            >
+              {keyFeaturesLeft.map((f) => (
+                <motion.li key={f.title} variants={staggerItem} className="py-5 sm:py-6">
+                  <p className="font-display text-base font-medium text-stone-900">{f.title}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-stone-600">{f.body}</p>
+                </motion.li>
+              ))}
+            </motion.ul>
+            <div className="my-5 h-px w-full shrink-0 bg-stone-300/60 sm:my-0 sm:h-auto sm:w-px sm:self-stretch" aria-hidden />
+            <motion.ul
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-4% 0px' }}
+              className="min-w-0 flex-1 divide-y divide-stone-300/60 sm:pl-8 md:pl-12"
+            >
+              {keyFeaturesRight.map((f) => (
+                <motion.li key={f.title} variants={staggerItem} className="py-5 sm:py-6">
+                  <p className="font-display text-base font-medium text-stone-900">{f.title}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-stone-600">{f.body}</p>
+                </motion.li>
+              ))}
+            </motion.ul>
+          </div>
         </motion.section>
 
         <motion.section

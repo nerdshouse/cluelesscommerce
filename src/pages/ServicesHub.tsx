@@ -69,8 +69,8 @@ export function ServicesHub() {
           <label htmlFor="service-search" className="sr-only">
             Search services
           </label>
-          <div className="relative">
-            <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-stone-400" aria-hidden>
+          <div className="relative border-b border-stone-300/80 pb-0.5 transition-colors focus-within:border-stone-600">
+            <span className="pointer-events-none absolute left-0 top-1/2 -translate-y-1/2 text-stone-400" aria-hidden>
               <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
@@ -81,7 +81,7 @@ export function ServicesHub() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search by name, channel, or deliverable…"
-              className="w-full rounded-full border-0 bg-white/55 py-3.5 pl-12 pr-5 text-sm text-stone-900 shadow-[0_20px_50px_-36px_rgb(28_25_23/0.18)] outline-none ring-1 ring-white/80 backdrop-blur-md transition placeholder:text-stone-400 focus:ring-2 focus:ring-stone-900/15 sm:py-4 sm:text-[0.9375rem]"
+              className="w-full border-0 bg-transparent py-3 pl-9 pr-1 text-sm text-stone-900 outline-none ring-0 transition placeholder:text-stone-400 focus:ring-0 sm:py-3.5 sm:pl-10 sm:text-[0.9375rem]"
             />
           </div>
         </motion.div>
@@ -99,38 +99,38 @@ export function ServicesHub() {
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
-            className="mt-10 grid gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-5 lg:grid-cols-2 xl:gap-6"
+            className="mt-12 grid gap-x-10 gap-y-12 sm:mt-14 sm:grid-cols-2 md:gap-x-16 md:gap-y-14"
           >
-            {filtered.map((s) => {
+            {filtered.map((s, i) => {
               const v = getServiceVisuals(s.slug)
+              const notLastMobile = i < filtered.length - 1
               return (
-                <motion.li key={s.slug} variants={staggerItem} className="flex min-h-full">
+                <motion.li key={s.slug} variants={staggerItem} className="min-h-0">
                   <Link
                     to={`/services/${s.slug}`}
-                    className="group flex min-h-full w-full flex-col overflow-hidden rounded-[1.65rem] bg-white/50 shadow-[0_28px_70px_-42px_rgb(28_25_23/0.2)] ring-1 ring-white/70 backdrop-blur-md transition hover:bg-white/60 hover:shadow-[0_36px_80px_-40px_rgb(28_25_23/0.24)]"
+                    className={`group flex min-h-full w-full flex-col pb-10 sm:pb-0 ${notLastMobile ? 'border-b border-stone-200/55 sm:border-0' : ''}`}
                   >
-                    <div className={`h-1 w-full ${v.stripe}`} aria-hidden />
-                    <div className="flex flex-1 flex-col p-5 sm:p-6">
-                      <div className="flex flex-wrap items-start justify-between gap-2">
-                        <span className={`rounded-full px-2.5 py-1 text-[0.6rem] font-semibold uppercase tracking-[0.14em] ${v.badge}`}>{s.badge}</span>
-                        <span className="max-w-[55%] text-right text-[0.6rem] font-semibold uppercase leading-snug tracking-[0.1em] text-stone-500">
-                          {s.deliveryHighlight}
-                        </span>
-                      </div>
-                      <h2 className="mt-4 font-display text-xl font-medium tracking-tight text-stone-900 group-hover:text-stone-700 sm:text-[1.35rem]">
-                        {s.title}
-                      </h2>
-                      <p className="mt-3 line-clamp-3 flex-1 text-sm leading-relaxed text-stone-600 sm:text-[0.9375rem]">{s.blurb}</p>
-                      {s.priceLine ? (
-                        <p className="mt-4 line-clamp-2 text-xs leading-relaxed text-stone-500">{s.priceLine}</p>
-                      ) : null}
-                      <span className="mt-auto inline-flex items-center gap-2 pt-5 text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-stone-900">
-                        View scope
-                        <svg className="h-4 w-4 transition group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
+                    <div className="flex flex-wrap items-start justify-between gap-2">
+                      <span className={`rounded-full px-2.5 py-1 text-[0.6rem] font-semibold uppercase tracking-[0.14em] ${v.badge}`}>{s.badge}</span>
+                      <span className="max-w-[55%] text-right text-[0.6rem] font-semibold uppercase leading-snug tracking-[0.1em] text-stone-500">
+                        {s.deliveryHighlight}
                       </span>
                     </div>
+                    <h2 className="mt-4 font-display text-xl font-medium tracking-tight text-stone-900 sm:text-[1.35rem]">
+                      <span className="underline decoration-stone-300 decoration-1 underline-offset-[0.35rem] transition group-hover:decoration-stone-800">
+                        {s.title}
+                      </span>
+                    </h2>
+                    <p className="mt-3 line-clamp-3 flex-1 text-sm leading-relaxed text-stone-600 sm:text-[0.9375rem]">{s.blurb}</p>
+                    {s.priceLine ? (
+                      <p className="mt-4 line-clamp-2 text-xs leading-relaxed text-stone-500">{s.priceLine}</p>
+                    ) : null}
+                    <span className="mt-6 inline-flex items-center gap-2 text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-stone-700">
+                      View scope
+                      <svg className="h-4 w-4 text-stone-500 transition group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </span>
                   </Link>
                 </motion.li>
               )
