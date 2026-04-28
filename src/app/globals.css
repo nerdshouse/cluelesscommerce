@@ -1,0 +1,338 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f7f8fa;
+  --foreground: #0b1015;
+  --border: #e2e4e8;
+  --bg-alt: #eef1f5;
+  --text-muted: #4b5563;
+  --dim: #6b7280;
+  --blue: #0763ee;
+  --blue-hover: #0554cc;
+  --blue-light: #3d7ef5;
+  --card-blue: #ddebff;
+  --border-light: rgba(71, 148, 224, 0.3);
+}
+
+@theme inline {
+  --color-bg: var(--background);
+  --color-bg-alt: var(--bg-alt);
+  --color-text: var(--foreground);
+  --color-text-muted: var(--text-muted);
+  --color-dim: var(--dim);
+  --color-border: var(--border);
+  --color-blue: var(--blue);
+  --color-blue-hover: var(--blue-hover);
+  --color-blue-light: var(--blue-light);
+  --color-card-blue: var(--card-blue);
+  --color-border-light: var(--border-light);
+  --font-sans: var(--font-dm-sans);
+  --font-heading: var(--font-space-grotesk);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+@keyframes flowing-line-move {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: translateY(-5%);
+  }
+  50% {
+    opacity: 0.95;
+    transform: translateY(5%);
+  }
+}
+
+.flowing-line {
+  animation: flowing-line-move 5s ease-in-out infinite;
+}
+
+/* Hero: add-to-cart parcel drop */
+@keyframes hero-cart-parcel-drop {
+  0% {
+    transform: translateY(-58px);
+    opacity: 0;
+  }
+  7% {
+    opacity: 1;
+  }
+  22% {
+    transform: translateY(6px);
+  }
+  28% {
+    transform: translateY(-3px);
+  }
+  34% {
+    transform: translateY(0);
+  }
+  68% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  76% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-58px);
+    opacity: 0;
+  }
+}
+
+@keyframes hero-cart-plus-pop {
+  0%,
+  26% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  34% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  48% {
+    opacity: 0;
+    transform: scale(1.08);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+}
+
+@keyframes d2c-headline-cart-nudge {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  45% {
+    transform: translateY(-2px) scale(1.06);
+  }
+  55% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-cart-parcel {
+    transform-origin: 118px 168px;
+    animation: hero-cart-parcel-drop 2.85s ease-in-out infinite;
+  }
+
+  .hero-cart-plusone {
+    transform-origin: 180px 132px;
+    animation: hero-cart-plus-pop 2.85s ease-in-out infinite;
+  }
+
+  .d2c-headline-cart {
+    transform-origin: center;
+    animation: d2c-headline-cart-nudge 2.6s ease-in-out infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-cart-parcel {
+    animation: none;
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .hero-cart-plusone {
+    animation: none;
+    opacity: 0.95;
+    transform: none;
+  }
+
+  .d2c-headline-cart {
+    animation: none !important;
+  }
+
+  .d2c-banner-float-1,
+  .d2c-banner-float-2,
+  .d2c-banner-drift-bag,
+  .d2c-banner-pulse-tag,
+  .d2c-banner-pulse-pct,
+  .d2c-banner-truck,
+  .d2c-banner-spin-slow,
+  .d2c-banner-spin-slow-reverse,
+  .d2c-banner-rise,
+  .d2c-banner-grid-shift {
+    animation: none !important;
+  }
+}
+
+/* Blue band: D2C decorative motion */
+@keyframes d2c-banner-float {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(6px, -14px) rotate(-4deg);
+  }
+}
+
+@keyframes d2c-banner-float-alt {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(-8px, 10px) rotate(5deg);
+  }
+}
+
+@keyframes d2c-banner-drift {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(18px);
+  }
+}
+
+@keyframes d2c-banner-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.22;
+  }
+  50% {
+    transform: scale(1.12);
+    opacity: 0.34;
+  }
+}
+
+@keyframes d2c-banner-pulse-text {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.18;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.3;
+  }
+}
+
+@keyframes d2c-banner-truck {
+  0%,
+  100% {
+    transform: translateX(-18%);
+  }
+  50% {
+    transform: translateX(18%);
+  }
+}
+
+@keyframes d2c-banner-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes d2c-banner-rise {
+  0% {
+    transform: translateY(0) scale(0.6);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.45;
+  }
+  88% {
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateY(-140px) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes d2c-banner-grid-shift {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0.05;
+  }
+  50% {
+    transform: translate(10px, 8px);
+    opacity: 0.08;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 0.05;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .d2c-banner-float-1 {
+    animation: d2c-banner-float 7s ease-in-out infinite;
+  }
+
+  .d2c-banner-float-2 {
+    animation: d2c-banner-float-alt 8.5s ease-in-out infinite;
+    animation-delay: -2s;
+  }
+
+  .d2c-banner-drift-bag {
+    animation: d2c-banner-drift 9s ease-in-out infinite;
+    animation-delay: -1s;
+  }
+
+  .d2c-banner-pulse-tag {
+    animation: d2c-banner-pulse 4.5s ease-in-out infinite;
+  }
+
+  .d2c-banner-pulse-pct {
+    animation: d2c-banner-pulse-text 5s ease-in-out infinite;
+    animation-delay: -1.5s;
+  }
+
+  .d2c-banner-truck {
+    animation: d2c-banner-truck 14s ease-in-out infinite;
+  }
+
+  .d2c-banner-spin-slow {
+    animation: d2c-banner-spin 28s linear infinite;
+  }
+
+  .d2c-banner-spin-slow-reverse {
+    animation: d2c-banner-spin 22s linear infinite reverse;
+  }
+
+  .d2c-banner-rise-1 {
+    animation: d2c-banner-rise 5.5s ease-in-out infinite;
+  }
+
+  .d2c-banner-rise-2 {
+    animation: d2c-banner-rise 6.8s ease-in-out infinite;
+    animation-delay: -2s;
+  }
+
+  .d2c-banner-rise-3 {
+    animation: d2c-banner-rise 7.2s ease-in-out infinite;
+    animation-delay: -4s;
+  }
+
+  .d2c-banner-rise-4 {
+    animation: d2c-banner-rise 6s ease-in-out infinite;
+    animation-delay: -1.2s;
+  }
+
+  .d2c-banner-grid-shift {
+    animation: d2c-banner-grid-shift 18s ease-in-out infinite;
+  }
+}
+
+.font-heading {
+  font-family: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-body {
+  font-family: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+}
