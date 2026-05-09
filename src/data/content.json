@@ -1,0 +1,322 @@
+{
+  "hubs": {
+    "360-full-stack": {
+      "id": "360-full-stack",
+      "label": "360 Full Stack",
+      "shortLabel": "360°",
+      "tagline": "End-to-end execution. Strategy, creative, performance — owned entirely in-house.",
+      "accentColor": "#3B82F6",
+      "cardGradient": "from-blue-900 to-blue-950",
+      "problemHeading": "Broken systems most brands are stuck in",
+      "problemGrid": [
+        {
+          "title": "Vanishing Agencies",
+          "description": "They show up with great energy and big promises. Once onboarded, they suddenly disappear. Calls get shorter, updates get vaguer and somehow nothing is on time.",
+          "icon": "👻"
+        },
+        {
+          "title": "Pretty But Pointless Creatives",
+          "description": "Your feed looks stunning but your ROAS doesn't. Beautiful creatives without performance thinking is just expensive art — and empires aren't built on aesthetics alone. Brand positioning and sales have to work as one.",
+          "icon": "🎨"
+        },
+        {
+          "title": "Junior Handoff",
+          "description": "Founders sold you the vision but execution went to a junior three levels down. No senior eyes on your account, no accountability at the top — just a fresh face learning on your brand's dime.",
+          "icon": "🤝"
+        },
+        {
+          "title": "Vendor Chaos",
+          "description": "Multiple vendors, zero ownership of outcomes and the founder stuck in the middle, coordinating instead of building. When nobody owns the outcome, the outcome owns you.",
+          "icon": "🌀"
+        }
+      ],
+      "servicesGrid": [
+        {
+          "name": "Performance",
+          "subtext": "Full-funnel paid media strategy built for scale — Meta, Google, and beyond.",
+          "tags": ["Meta Ads", "Google Ads", "CRO", "Analytics"]
+        },
+        {
+          "name": "Brand",
+          "subtext": "Brand identity, positioning, and visual systems that make you impossible to ignore.",
+          "tags": ["Identity", "Positioning", "Copywriting", "Guidelines"]
+        },
+        {
+          "name": "CGI and Creative",
+          "subtext": "High-fidelity 3D and CGI production for product visuals that convert.",
+          "tags": ["3D Render", "Product CGI", "Motion", "Storyboard"]
+        },
+        {
+          "name": "Tech",
+          "subtext": "Custom storefronts, automation stacks, and integrations built to perform.",
+          "tags": ["Shopify", "Webflow", "Automation", "API"]
+        },
+        {
+          "name": "Social",
+          "subtext": "Organic social strategy and content that builds community and drives real engagement.",
+          "tags": ["Strategy", "Content", "Community", "Scheduling"]
+        },
+        {
+          "name": "SEO",
+          "subtext": "Technical and content SEO that earns long-term organic visibility.",
+          "tags": ["Technical SEO", "Content", "Link Building", "Audit"]
+        }
+      ]
+    },
+    "global-expansion": {
+      "id": "global-expansion",
+      "label": "Global Expansion",
+      "shortLabel": "Global",
+      "tagline": "Take your brand across borders. Localisation, market entry, and international growth.",
+      "accentColor": "#F59E0B",
+      "cardGradient": "from-amber-900 to-amber-950",
+      "problemHeading": "Broken systems most brands are stuck in ",
+      "problemGrid": [
+        {
+          "title": "Lost in Translation",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.",
+          "icon": "🌐"
+        },
+        {
+          "title": "No Market-Entry Playbook",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud.",
+          "icon": "🗺️"
+        },
+        {
+          "title": "Compliance Blind Spots",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit.",
+          "icon": "⚠️"
+        },
+        {
+          "title": "Generic Global Campaigns",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non.",
+          "icon": "📦"
+        }
+      ],
+      "servicesGrid": [
+        {
+          "name": "Performance",
+          "subtext": "Multi-market paid media campaigns with localised messaging and budget allocation.",
+          "tags": [
+            "Multi-Market",
+            "Localisation",
+            "Budget Strategy",
+            "Attribution"
+          ]
+        },
+        {
+          "name": "Brand",
+          "subtext": "Brand adaptation frameworks that maintain identity while resonating locally.",
+          "tags": ["Localisation", "Cultural Fit", "Tone", "Visual Adaptation"]
+        },
+        {
+          "name": "CGI and Creative",
+          "subtext": "Market-specific creative production — product, lifestyle, and cultural context.",
+          "tags": ["Cultural Creative", "3D", "Localised Campaigns", "Motion"]
+        },
+        {
+          "name": "Tech",
+          "subtext": "Multi-currency, multi-language storefronts with regional compliance built in.",
+          "tags": ["Shopify Markets", "i18n", "Tax/Duty", "Localised UX"]
+        },
+        {
+          "name": "Social",
+          "subtext": "Platform-native social strategy for each target market — TikTok, Xiaohongshu, and beyond.",
+          "tags": ["Regional Platforms", "Creators", "Content", "Paid Social"]
+        },
+        {
+          "name": "SEO",
+          "subtext": "International SEO architecture — hreflang, regional keyword strategy, and local backlinks.",
+          "tags": ["hreflang", "Regional Keywords", "Local Links", "Technical"]
+        }
+      ]
+    },
+    "retention": {
+      "id": "retention",
+      "label": "Retention",
+      "shortLabel": "Retention",
+      "tagline": "Turn one-time buyers into lifetime customers. Loyalty, lifecycle, and repeat revenue.",
+      "accentColor": "#EF4444",
+      "cardGradient": "from-red-900 to-red-950",
+      "problemHeading": "Broken systems most brands are stuck in ",
+      "problemGrid": [
+        {
+          "title": "Freelancers With Zero Accountability",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.",
+          "icon": "🤷"
+        },
+        {
+          "title": "High Acquisition, Zero Retention",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud.",
+          "icon": "📉"
+        },
+        {
+          "title": "Email Treated as an Afterthought",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit.",
+          "icon": "📧"
+        },
+        {
+          "title": "No Post-Purchase Experience",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non.",
+          "icon": "🛒"
+        }
+      ],
+      "servicesGrid": [
+        {
+          "name": "Performance",
+          "subtext": "Retargeting and loyalty-focused paid media that brings customers back at lower CAC.",
+          "tags": ["Retargeting", "LTV Campaigns", "Win-Back", "Lookalike"]
+        },
+        {
+          "name": "Brand",
+          "subtext": "Post-purchase brand storytelling that builds emotional loyalty and drives repeat intent.",
+          "tags": ["Loyalty Narrative", "UGC", "Community", "Packaging Copy"]
+        },
+        {
+          "name": "CGI and Creative",
+          "subtext": "Retention-specific creative: unboxing, lifestyle follow-ups, and subscription visuals.",
+          "tags": ["Unboxing", "Lifestyle", "Email Creative", "Subscription"]
+        },
+        {
+          "name": "Tech",
+          "subtext": "Loyalty programme tech, subscription infrastructure, and post-purchase automations.",
+          "tags": ["Loyalty Apps", "Subscriptions", "Klaviyo", "Post-Purchase"]
+        },
+        {
+          "name": "Social",
+          "subtext": "Community-building content and ambassador programmes to deepen brand attachment.",
+          "tags": ["Community", "Ambassadors", "UGC", "Engagement"]
+        },
+        {
+          "name": "SEO",
+          "subtext": "Content strategy targeting existing customers — reviews, guides, and loyalty-driven organic.",
+          "tags": ["Content SEO", "Reviews", "Guides", "Internal Linking"]
+        }
+      ]
+    },
+    "personal-branding": {
+      "id": "personal-branding",
+      "label": "Personal Branding",
+      "shortLabel": "Personal",
+      "tagline": "Build the founder behind the brand. Thought leadership, presence, and positioning.",
+      "accentColor": "#8B5CF6",
+      "cardGradient": "from-violet-900 to-violet-950",
+      "problemHeading": "Broken systems most brands are stuck in ",
+      "problemGrid": [
+        {
+          "title": "Invisible Founders",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.",
+          "icon": "🫥"
+        },
+        {
+          "title": "No Consistent Voice",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud.",
+          "icon": "🎭"
+        },
+        {
+          "title": "Chasing Virality, Not Authority",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit.",
+          "icon": "🎯"
+        },
+        {
+          "title": "Brand Divorced From Person",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non.",
+          "icon": "💔"
+        }
+      ],
+      "servicesGrid": [
+        {
+          "name": "Performance",
+          "subtext": "Thought-leadership amplification through paid — get your content in front of the right rooms.",
+          "tags": ["LinkedIn Ads", "Amplification", "Lead Gen", "Retargeting"]
+        },
+        {
+          "name": "Brand",
+          "subtext": "Founder positioning frameworks — your story, your POV, your visual identity.",
+          "tags": [
+            "Positioning",
+            "Bio and Story",
+            "Visual Identity",
+            "Tone of Voice"
+          ]
+        },
+        {
+          "name": "CGI and Creative",
+          "subtext": "Professional photo and video direction, podcast covers, speaker visuals, and press kits.",
+          "tags": ["Headshots", "Speaker Kits", "Podcast", "Press Assets"]
+        },
+        {
+          "name": "Tech",
+          "subtext": "Personal website, newsletter infrastructure, and CRM for audience building.",
+          "tags": ["Personal Site", "Newsletter", "CRM", "Landing Pages"]
+        },
+        {
+          "name": "Social",
+          "subtext": "LinkedIn, Instagram, and X content strategy built around your authentic expertise.",
+          "tags": ["LinkedIn", "Instagram", "X/Twitter", "Content Calendar"]
+        },
+        {
+          "name": "SEO",
+          "subtext": "Personal SEO — rank for your name, your niche, and the conversations you want to own.",
+          "tags": ["Personal SEO", "PR Links", "Thought Leadership", "SERP"]
+        }
+      ]
+    }
+  },
+  "static": {
+    "banner": {
+      "headline": "Clueless about growing your D2C brand?",
+      "subheadline": "Your brand doesn't need to grow. It needs to compound.",
+      "subtext": "Branding and Performance all under one roof so your business can actually compound, because that's how empires are built.",
+      "cta": "Book a Strategy Call"
+    },
+    "whyClueless": {
+      "headline": "Why Brands Choose Us",
+      "subtext": "",
+      "points": [
+        {
+          "title": "Exclusivity",
+          "description": "We work with one brand per vertical. Not because we can't handle more, but because your competitor shouldn't share strategies and insights. We are not here to cater the masses but to build a brand that stands out."
+        },
+        {
+          "title": "Complete In-House Team",
+          "description": "No freelancers, no outsourced surprises. Every person working on your account is a Clueless team member who knows your brand inside out, because they've been building it from day one."
+        },
+        {
+          "title": "Creative + Performance",
+          "description": "Beautiful work that actually performs. We refuse to choose, because the brands that compound are the ones where every creative decision is also a performance decision."
+        },
+        {
+          "title": "Top Management Led",
+          "description": "No junior handoffs. You get direct access to top management, always. Because the people who sold you the vision are the same ones delivering it."
+        }
+      ]
+    },
+    "caseStudies": [
+      {
+        "number": "01",
+        "client": "DEHRADUN BAZAAR",
+        "title": "The City's Biggest Flea Market Experience",
+        "problem": "High ad spend with minimal conversions and poor audience targeting.",
+        "whatWeDid": "Data-driven audience segmentation, creative refresh, and complete funnel optimisation.",
+        "result": "A benchmark for community-driven brand activations through storytelling, design & digital strategy."
+      },
+      {
+        "number": "02",
+        "client": "MANERI",
+        "title": "Crafting India's First Fan Movement Brand",
+        "problem": "No brand presence. Struggling to generate qualified leads for enterprise ceiling fan sales.",
+        "whatWeDid": "Complete brand overhaul, LinkedIn thought leadership, inbound content + 3D render strategy.",
+        "result": "Turned an idea into a nationwide cultural identity — from the people, for the people."
+      },
+      {
+        "number": "03",
+        "client": "SAATVIK SOLAR",
+        "title": "Powering a Brand for Its IPO Phase",
+        "problem": "Outdated digital presence, losing ground to modern solar competitors.",
+        "whatWeDid": "Website redesign, local SEO, reputation management, investor-facing brand refresh.",
+        "result": "Stronger identity, higher engagement & renewed market confidence ahead of IPO."
+      }
+    ]
+  }
+}
