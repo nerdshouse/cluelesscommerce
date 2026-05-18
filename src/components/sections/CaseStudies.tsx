@@ -12,23 +12,14 @@ export default function CaseStudies() {
   return (
     <section id="work" className="section">
       <div className="section-inner">
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="section-label mb-3"
-        >
-          Proof, Not Promises
-        </motion.p>
-
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease }}
-          className="section-heading mb-10"
+          className="section-heading mb-8"
         >
-          Real brands. Real problems.{' '}Real results.
+          Real brands. Real problems.{' '}<span className="text-accent">Real results.</span>
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border">
@@ -39,7 +30,7 @@ export default function CaseStudies() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1, ease }}
-              className="bg-surface hover:bg-surface-hover transition-colors p-8 flex flex-col gap-6"
+              className="bg-surface hover:bg-surface-hover transition-colors p-5 sm:p-8 flex flex-col gap-4"
             >
               {/* Number + client tag row */}
               <div className="flex items-start justify-between">
@@ -61,7 +52,7 @@ export default function CaseStudies() {
                 <p className="text-[10px] font-semibold tracking-widest text-fg-muted uppercase">
                   Problem
                 </p>
-                <p className="text-sm text-fg-muted leading-relaxed">
+                <p className="text-sm text-fg leading-relaxed">
                   {study.problem}
                 </p>
               </div>
@@ -71,14 +62,14 @@ export default function CaseStudies() {
                 <p className="text-[10px] font-semibold tracking-widest text-fg-muted uppercase">
                   What We Did
                 </p>
-                <p className="text-sm text-fg-muted leading-relaxed">
+                <p className="text-sm text-fg leading-relaxed">
                   {study.whatWeDid}
                 </p>
               </div>
 
               {/* Result */}
               <div className="flex flex-col gap-1 border-t border-border pt-5 mt-auto">
-                <p className="text-[10px] font-semibold tracking-widest text-fg-muted uppercase">
+                <p className="text-[10px] font-semibold tracking-widest text-accent uppercase">
                   Result
                 </p>
                 <p className="text-sm font-medium text-fg leading-relaxed">
@@ -95,7 +86,7 @@ export default function CaseStudies() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 p-8 md:p-10 bg-surface border border-border rounded-xl"
+          className="mt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-6 md:p-10 bg-surface border border-border rounded-xl"
         >
           <div>
             <h3 className="font-serif text-2xl font-bold text-fg">
@@ -106,7 +97,7 @@ export default function CaseStudies() {
             </p>
           </div>
           <Link href="/contact" className="shrink-0 btn-primary">
-            Book a Strategy Call
+            Book Free Consultation
           </Link>
         </motion.div>
       </div>

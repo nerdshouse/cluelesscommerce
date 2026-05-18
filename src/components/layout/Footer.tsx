@@ -14,12 +14,12 @@ const COPYRIGHT_LINES = [
 
 export default function Footer() {
   return (
-    <footer className="relative min-h-screen flex flex-col items-center justify-between overflow-hidden bg-bg">
+    <footer className="relative flex flex-col items-center justify-between overflow-hidden bg-bg">
       {/* Top border */}
       <div className="w-full h-px bg-border" />
 
       {/* Centre content */}
-      <div className="flex-1 flex flex-col items-center justify-center text-center px-6 gap-7 py-24">
+      <div className="flex-1 flex flex-col items-center justify-center text-center px-6 gap-4 py-10">
 
         {/* Circular emblem */}
         <motion.div
@@ -44,7 +44,7 @@ export default function Footer() {
           {/* Inner circle */}
           <div className="absolute inset-3 rounded-full border border-border/60 flex items-center justify-center">
             <Image
-              src="/BlackLogo2.png"
+              src="/logos/BlackLogo2.png"
               alt="Clueless Commerce"
               width={40}
               height={40}
@@ -59,7 +59,7 @@ export default function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease }}
-          className="font-serif text-2xl md:text-5xl text-fg-muted"
+          className="font-serif text-2xl md:text-5xl text-accent"
         >
           Still Clueless?
         </motion.p>
@@ -91,7 +91,7 @@ export default function Footer() {
             href="/contact"
             className="btn-primary px-8 py-3.5 rounded-full text-sm font-semibold"
           >
-            Book A Call
+            Book Free Consultation
           </Link>
         </motion.div>
 

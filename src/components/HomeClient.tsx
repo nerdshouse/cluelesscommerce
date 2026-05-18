@@ -62,7 +62,7 @@ export default function HomeClient() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="pb-20 lg:pb-0"
+            className="pb-4 lg:pb-0"
           >
             <MainBanner />
             <ProblemGrid />
@@ -90,7 +90,7 @@ export default function HomeClient() {
             transition={{ duration: 0.4, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="fixed bottom-6 right-6 z-40 hidden lg:flex items-center gap-2 px-5 py-3 rounded-full bg-white text-black text-xs font-semibold shadow-lg hover:bg-white/90 transition-colors"
           >
-            Schedule a Call
+            Book Free Consultation
             <span className="text-sm leading-none">↗</span>
           </motion.a>
         )}

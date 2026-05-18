@@ -7,6 +7,7 @@
   --border: #e5e5e5;
   --surface: #f5f5f5;
   --surface-hover: #eeeeee;
+  --accent: #ff5a36;
 }
 @theme {
   --color-bg: #ffffff;
@@ -15,8 +16,7 @@
   --color-border: #e5e5e5;
   --color-surface: #f5f5f5;
   --color-surface-hover: #eeeeee;
-  --color-accent: #E8A44A;
-  --color-accent-result: #5B8DEF;
+  --color-accent: #ff5a36;
 
   --font-sans: var(--font-inter);
   --font-serif: var(--font-inter);
@@ -48,11 +48,11 @@ body {
 
 /* ─── Section layout ─────────────────────────────────────────────── */
 .section {
-  padding-block: 5rem;
+  padding-block: 3.5rem;
   padding-inline: 1.5rem;
 }
 @media (min-width: 768px) {
-  .section { padding-block: 7rem; padding-inline: 3rem; }
+  .section { padding-block: 6rem; padding-inline: 3rem; }
 }
 
 .section-inner {
@@ -71,7 +71,7 @@ body {
 
 .section-heading {
   font-family: var(--font-serif);
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
   line-height: 1.08;
   color: var(--fg);
@@ -82,7 +82,7 @@ body {
 
 .body-muted {
   color: var(--fg-muted);
-  line-height: 1.75;
+  line-height: 1.3;
 }
 
 /* ─── Cards ──────────────────────────────────────────────────────── */
@@ -177,6 +177,15 @@ body {
   margin-inline: 0.5rem;
   flex-shrink: 0;
 }
+
+/* ─── Accent ─────────────────────────────────────────────────────── */
+.text-accent { color: var(--accent); }
+
+/* ─── Font styles ────────────────────────────────────────────────── */
+.font-medium-italic { font-weight: 500; font-style: italic; }
+.font-bold-italic   { font-weight: 700; font-style: italic; }
+.font-extrabold     { font-weight: 800; }
+.font-black-italic  { font-weight: 900; font-style: italic; }
 
 /* ─── Tag pill ───────────────────────────────────────────────────── */
 .tag {

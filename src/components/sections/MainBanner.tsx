@@ -37,32 +37,32 @@ export default function MainBanner() {
         id="home"
         className="min-h-svh flex flex-col justify-center pt-16 border-b border-border"
       >
-        <div className="section-inner px-6 md:px-10 py-14 md:py-16 grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-12 lg:gap-16 items-center">
+        <div className="section-inner px-6 md:px-10 py-8 md:py-16 grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-8 lg:gap-16 items-center">
 
           {/* Left — copy */}
           <div>
 
             <motion.h1
               {...fadeUp(0.1)}
-              className="font-serif text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold leading-[1.04] tracking-tight text-fg"
+              className="font-serif text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-extrabold leading-[1.04] tracking-tight text-fg"
             >
               {banner.headline}
             </motion.h1>
 
             <motion.p
               {...fadeUp(0.22)}
-              className="font-serif text-xl md:text-2xl font-bold text-fg mt-8 leading-snug whitespace-pre-line"
+              className="font-serif text-xl md:text-2xl font-bold text-fg mt-4 leading-snug whitespace-pre-line"
             >
               {banner.subheadline}
             </motion.p>
 
-            <motion.hr {...fadeUp(0.28)} className="border-border mt-4" />
+            <motion.hr {...fadeUp(0.28)} className="border-border mt-2 lg:mt-4" />
 
-            <motion.p {...fadeUp(0.34)} className="body-muted text-base mt-4 text-justify">
+            <motion.p {...fadeUp(0.34)} className="body-muted text-base mt-2 lg:mt-4 text-justify">
               {banner.subtext}
             </motion.p>
 
-            <motion.div {...fadeUp(0.44)} className="mt-8 flex flex-col sm:flex-row gap-3">
+            <motion.div {...fadeUp(0.44)} className="mt-4 lg:mt-8 flex flex-col sm:flex-row gap-3">
               <Link href="/contact" className="btn-primary rounded-md! justify-center">
                 {banner.cta}
               </Link>
@@ -74,7 +74,7 @@ export default function MainBanner() {
             <motion.div {...fadeUp(0.54)} className="mt-5 flex flex-wrap gap-x-5 gap-y-2">
               {TRUST.map((t) => (
                 <span key={t} className="flex items-center gap-1.5 text-xs text-fg-muted">
-                  <span className="text-fg font-semibold">✓</span> {t}
+                  <span className="text-accent font-semibold">✓</span> {t}
                 </span>
               ))}
             </motion.div>
@@ -89,9 +89,9 @@ export default function MainBanner() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.15 + i * 0.09, ease }}
-                className="bg-surface px-8 py-7 flex flex-row items-center gap-6"
+                className="bg-surface p-6 flex flex-row items-center gap-6"
               >
-                <p className="font-serif text-4xl md:text-5xl font-bold text-fg leading-none shrink-0">
+                <p className="font-serif text-4xl md:text-5xl font-extrabold text-accent leading-none shrink-0">
                   {stat.value}
                 </p>
                 <div>
@@ -106,7 +106,7 @@ export default function MainBanner() {
       </section>
 
       {/* ── Numbers strip ─────────────────────────────────────────────── */}
-      <section className="hidden md:block bg-surface border-b border-border">
+      {/* <section className="hidden md:block bg-surface border-b border-border">
         <div className="section-inner px-6 md:px-12">
           <div className="flex flex-wrap md:flex-nowrap divide-y md:divide-y-0 md:divide-x divide-border">
             {STRIP.map((item, i) => (
@@ -128,7 +128,7 @@ export default function MainBanner() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }

@@ -5,7 +5,7 @@
       "label": "360 Full Stack",
       "shortLabel": "360°",
       "tagline": "End-to-end execution. Strategy, creative, performance — owned entirely in-house.",
-      "accentColor": "#3B82F6",
+      "accentColor": "#ff5a36",
       "cardGradient": "from-blue-900 to-blue-950",
       "problemHeading": "Broken systems most brands are stuck in",
       "problemGrid": [
@@ -62,9 +62,9 @@
       "label": "Global Expansion",
       "shortLabel": "Global",
       "tagline": "Take your brand across borders. Localisation, market entry, and international growth.",
-      "accentColor": "#F59E0B",
+      "accentColor": "#ff5a36",
       "cardGradient": "from-amber-900 to-amber-950",
-      "problemHeading": "Broken systems most brands are stuck in ",
+      "problemHeading": "Broken systems most brands are stuck in",
       "problemGrid": [
         {
           "title": "No Market Entry Playbook",
@@ -119,7 +119,7 @@
       "label": "Retention",
       "shortLabel": "Retention",
       "tagline": "Turn one-time buyers into lifetime customers. Loyalty, lifecycle, and repeat revenue.",
-      "accentColor": "#FF5A36",
+      "accentColor": "#ff5a36",
       "cardGradient": "from-red-900 to-red-950",
       "problemHeading": "Broken systems most brands are stuck in ",
       "problemGrid": [
@@ -164,7 +164,7 @@
       "label": "Personal Branding",
       "shortLabel": "Personal",
       "tagline": "Build the founder behind the brand. Thought leadership, presence, and positioning.",
-      "accentColor": "#8B5CF6",
+      "accentColor": "#ff5a36",
       "cardGradient": "from-violet-900 to-violet-950",
       "problemHeading": "Broken systems most brands are stuck in ",
       "problemGrid": [
@@ -214,11 +214,9 @@
       "headline": "Clueless about growing your D2C brand?",
       "subheadline": "Your brand doesn't need to grow. It needs to compound.",
       "subtext": "Branding and Performance all under one roof so your business can actually compound, because that's how empires are built.",
-      "cta": "Book a Strategy Call"
+      "cta": "Book Free Consultation"
     },
     "whyClueless": {
-      "headline": "Why Brands Choose Us",
-      "subtext": "",
       "points": [
         {
           "title": "Exclusivity",

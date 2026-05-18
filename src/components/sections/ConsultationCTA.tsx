@@ -46,7 +46,7 @@ export default function ConsultationCTA() {
           transition={{ duration: 0.5, ease, delay: 0.24 }}
         >
           <Link href="/contact" className="btn-primary">
-            Book Free Consultation →
+            Book Free Consultation
           </Link>
         </motion.div>
       </div>

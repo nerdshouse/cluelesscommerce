@@ -28,30 +28,21 @@ export default function HowItWorks() {
     <section className="section">
       <div className="section-inner">
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="section-label mb-3"
-        >
-          How We Work
-        </motion.p>
-
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease }}
-          className="section-heading mb-12"
+          className="section-heading mb-8 md:mb-12"
         > 
           How We Go From{' '}
-          <span className="font-serif italic font-normal">Clueless to Compounding</span>
+          <span className="font-bold-italic">Clueless to <span className="text-accent">Compounding</span></span>
         </motion.h2>
 
-        {/* Steps — connected by a line on desktop */}
-        <div className="relative grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-6">
+        {/* Steps — vertical timeline on mobile, horizontal on desktop */}
+        <div className="relative grid grid-cols-1 md:grid-cols-4 gap-0 md:gap-6">
 
-          {/* Connector line */}
+          {/* Desktop horizontal connector */}
           <div className="hidden md:block absolute top-7 left-[12.5%] right-[12.5%] h-px bg-border z-0" />
 
           {STEPS.map((step, i) => (
@@ -61,15 +52,21 @@ export default function HowItWorks() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1, ease }}
-              className="relative z-10 flex flex-col items-start md:items-center gap-4"
+              className="relative z-10 flex md:flex-col md:items-center gap-4 md:gap-3"
             >
-              {/* Number circle */}
-              <div className="w-14 h-14 rounded-full border border-border bg-bg flex items-center justify-center shrink-0">
-                <span className="font-serif text-xl font-bold text-fg">{i + 1}</span>
+              {/* Circle + mobile vertical connector */}
+              <div className="flex flex-col items-center shrink-0 self-stretch">
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-full border border-border bg-bg flex items-center justify-center shrink-0">
+                  <span className="font-serif text-lg md:text-xl font-bold text-accent">{i + 1}</span>
+                </div>
+                {i < STEPS.length - 1 && (
+                  <div className="md:hidden w-px bg-border flex-1 mt-2" />
+                )}
               </div>
 
-              <div className="md:text-center">
-                <h3 className="font-serif text-lg font-bold text-fg mb-2">{step.title}</h3>
+              {/* Text */}
+              <div className="pb-8 md:pb-0 md:text-center">
+                <h3 className="font-serif text-lg font-bold text-fg mb-1">{step.title}</h3>
                 <p className="body-muted text-sm leading-relaxed">{step.description}</p>
               </div>
             </motion.div>

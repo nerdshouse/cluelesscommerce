@@ -16,15 +16,6 @@ export default function ServicesGrid() {
   return (
     <section id="services" className="section">
       <div className="section-inner">
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="section-label mb-3"
-        >
-          Services
-        </motion.p>
-
         {/* Heading row */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
           <motion.h2
@@ -34,8 +25,8 @@ export default function ServicesGrid() {
             transition={{ duration: 0.6, ease }}
             className="section-heading"
           >
-            Services Built Around Your Growth
-          </motion.h2>
+            Services Built <span className="text-accent">Around</span> Your Growth
+          </motion.h2>  
 
         </div>
 
@@ -45,7 +36,7 @@ export default function ServicesGrid() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.35 }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px"
         >
           {hub.servicesGrid.map((service, i) => (
             <motion.div
@@ -53,18 +44,22 @@ export default function ServicesGrid() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45, delay: i * 0.07, ease }}
-              className="bg-surface hover:bg-surface-hover transition-colors duration-200 p-8 flex flex-col min-h-50"
+              className="bg-surface hover:bg-surface-hover transition-colors duration-200 p-5 sm:p-8 flex flex-col min-h-30 sm:min-h-40"
             >
               {/* Hub-specific accent colour — must stay inline */}
-              <span className="text-[10px] font-bold uppercase tracking-[0.2em] mb-5 text-fg">
+              <span className="text-[11px] font-bold uppercase tracking-widest mb-2 text-accent">
                 {service.name}
               </span>
 
-              <p className="text-fg font-serif text-lg leading-snug flex-1 mb-6">
+              <p className="text-fg font-serif text-md leading-snug flex-1 mb-6">
                 {service.subtext}
               </p>
 
             </motion.div>
+          ))}
+
+          {Array.from({ length: (3 - (hub.servicesGrid.length % 3)) % 3 }).map((_, i) => (
+            <div key={`filler-${i}`} className="hidden lg:block bg-bg" />
           ))}
         </motion.div>
       </div>

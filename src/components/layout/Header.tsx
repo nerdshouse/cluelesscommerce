@@ -55,12 +55,11 @@ export default function Header() {
         className="hover:opacity-70 transition-opacity cursor-pointer"
       >
         <Image
-          src="/BlackLogo1.png"
+          src="/logos/BlackLogo1.png"
           alt="Clueless Commerce"
           width={160}
           height={40}
-          className="h-8 w-auto"
-          style={{ width: 'auto' }}
+          style={{ height: '2.75rem', width: 'auto' }}
           priority
         />
       </button>
@@ -91,7 +90,7 @@ export default function Header() {
         ))}
 
         <Link href="/contact" className="btn-sm rounded-sm!">
-          Schedule a Call
+          Book Free Consultation
         </Link>
       </nav>
 
@@ -151,7 +150,7 @@ export default function Header() {
               onClick={() => setMenuOpen(false)}
               className="btn-sm justify-center"
             >
-              Schedule A Call
+              Book Free Consultation
             </Link>
 
             <a href="/privacy-policy" className="body-muted text-xs hover:text-fg transition-colors">

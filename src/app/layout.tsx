@@ -14,6 +14,26 @@ const inter = localFont({
       weight: '100 900',
       style: 'italic',
     },
+    {
+      path: '../../public/fonts/inter.28pt-extrabold.ttf',
+      weight: '800',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/inter.28pt-bold-italic.ttf',
+      weight: '700',
+      style: 'italic',
+    },
+    {
+      path: '../../public/fonts/inter.28pt-medium-italic.ttf',
+      weight: '500',
+      style: 'italic',
+    },
+    {
+      path: '../../public/fonts/inter.18pt-black-italic.ttf',
+      weight: '900',
+      style: 'italic',
+    },
   ],
   variable: '--font-inter',
   display: 'swap',

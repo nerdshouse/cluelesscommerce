@@ -91,11 +91,11 @@ export default function StateGateLauncher({ onUnlock }: Props) {
                 className="mb-2"
               >
                 <Image
-                  src="/BlackLogo1.png"
+                  src="/logos/BlackLogo1.png"
                   alt="Clueless Commerce"
                   width={240}
                   height={60}
-                  className="w-40 md:w-60 h-auto"
+                  className="w-40 md:w-60 h-auto scale-175"
                   style={{ height: 'auto' }}
                   priority
                 />
@@ -105,7 +105,7 @@ export default function StateGateLauncher({ onUnlock }: Props) {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1, ease }}
-                className="text-[10px] md:text-xs uppercase tracking-[0.3em] text-fg-muted font-semibold"
+                className="text-[12px] md:text-sm uppercase tracking-[0.3em] text-fg font-bold mt-1"
               >
                 Select your growth hub
               </motion.p>

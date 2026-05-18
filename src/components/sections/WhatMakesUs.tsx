@@ -28,24 +28,15 @@ export default function WhatMakesUs() {
     <section className="section border-t border-border">
       <div className="section-inner">
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="section-label mb-3"
-        >
-          Zero Risk to Start
-        </motion.p>
-
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease }}
-          className="section-heading mb-12"
+          className="section-heading mb-8 md:mb-12"
         >
           Still clueless about why choose us?{' '}
-          <span className="font-serif italic font-normal text-fg-muted">Read on.</span>
+          <span className="font-medium-italic text-accent">Read on...</span>
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border">
@@ -56,9 +47,9 @@ export default function WhatMakesUs() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1, ease }}
-              className="bg-surface hover:bg-surface-hover transition-colors duration-200 p-8 flex flex-col gap-4"
+              className="bg-surface hover:bg-surface-hover transition-colors duration-200 p-5 sm:p-8 flex flex-col gap-3"
             >
-              <span className="w-8 h-8 rounded-full border border-border flex items-center justify-center text-[11px] font-bold text-fg-muted">
+              <span className="w-8 h-8 rounded-full border border-accent flex items-center justify-center text-[11px] font-bold text-accent">
                 {String(i + 1).padStart(2, '0')}
               </span>
               <h3 className="font-serif text-xl font-bold text-fg">{card.title}</h3>
@@ -75,7 +66,7 @@ export default function WhatMakesUs() {
           className="mt-8 flex justify-center"
         >
           <Link href="/contact" className="btn-ghost">
-            Claim Your Spot →
+            Book Free Consultation
           </Link>
         </motion.div>
 

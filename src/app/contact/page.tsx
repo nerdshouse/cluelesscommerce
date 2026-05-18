@@ -481,7 +481,7 @@ export default function ContactPage() {
                 disabled={loading}
                 className="mt-4 px-6 py-3.5 bg-(--fg) text-(--bg) font-medium text-sm rounded-sm hover:opacity-90 transition-opacity disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                {loading ? 'Sending…' : 'Book a Strategy Call →'}
+                {loading ? 'Sending…' : 'Book Free Consultation'}
               </button>
 
               {error && (
