@@ -9,7 +9,7 @@ import Link from 'next/link';
 const BRAND_CATEGORIES = ['Beauty', 'F&B', 'Apparel', 'Health', 'Other'];
 const SPEND_RANGES = ['< ₹50K/mo', '₹50K–2L/mo', '₹2L–5L/mo', '₹5L+/mo', 'Not sure'];
 const WORKING_WITH = ['Agency', 'In-house', 'Both', "Haven't started yet"];
-const CHANNELS = ['Meta', 'Google', 'Marketplaces', 'Quick Commerce', 'Affiliate', 'Email / WhatsApp', 'None yet'];
+const CHANNELS = ['Meta', 'Google', 'Marketplaces', 'Quick Commerce', 'Affiliate', 'Email / WhatsApp', 'None yet', 'Other'];
 const HEARD_FROM = ['Instagram', 'LinkedIn', 'Referral', 'Google Search', 'Word of mouth', 'Other'];
 
 interface FormState {
@@ -20,21 +20,25 @@ interface FormState {
   websiteUrl: string;
   socialHandles: string;
   brandCategory: string;
+  brandCategoryOther: string;
   brandStory: string;
   brandStuck: string;
   brandVision: string;
   marketingSpend: string;
   workingWith: string;
   channels: string[];
+  channelsOther: string;
   frustration: string;
   heardFrom: string;
+  heardFromOther: string;
 }
 
 const INITIAL: FormState = {
   name: '', email: '', phone: '', brandName: '', websiteUrl: '',
-  socialHandles: '', brandCategory: '', brandStory: '', brandStuck: '',
-  brandVision: '', marketingSpend: '', workingWith: '', channels: [],
-  frustration: '', heardFrom: '',
+  socialHandles: '', brandCategory: '', brandCategoryOther: '',
+  brandStory: '', brandStuck: '', brandVision: '', marketingSpend: '',
+  workingWith: '', channels: [], channelsOther: '',
+  frustration: '', heardFrom: '', heardFromOther: '',
 };
 
 const inputCls =
@@ -51,13 +55,78 @@ function SectionDivider({ label }: { label: string }) {
   );
 }
 
+type Errors = Partial<{
+  name: string; email: string; phone: string; brandName: string;
+  websiteUrl: string; socialHandles: string;
+  brandCategory: string; brandCategoryOther: string;
+  brandStory: string; brandStuck: string; brandVision: string;
+  marketingSpend: string; workingWith: string;
+  channels: string; channelsOther: string;
+  frustration: string; heardFrom: string; heardFromOther: string;
+}>;
+
+function validate(f: FormState): Errors {
+  const e: Errors = {};
+
+  if (!f.name.trim()) e.name = 'Name is required.';
+  else if (f.name.trim().length < 2) e.name = 'Name must be at least 2 characters.';
+  else if (f.name.trim().length > 80) e.name = 'Name must be under 80 characters.';
+  else if (!/^[\p{L}\s'-]+$/u.test(f.name.trim())) e.name = 'Name can only contain letters, spaces, hyphens, or apostrophes.';
+
+  if (!f.email.trim()) e.email = 'Email is required.';
+  else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email.trim())) e.email = 'Enter a valid email address.';
+
+  if (!f.phone.trim()) e.phone = 'Phone number is required.';
+  else if (!/^[0-9\s+\-()]+$/.test(f.phone.trim())) e.phone = 'Enter a valid phone number.';
+  else if (f.phone.replace(/\D/g, '').length < 7 || f.phone.replace(/\D/g, '').length > 15) e.phone = 'Phone number must be 7–15 digits.';
+
+  if (!f.brandName.trim()) e.brandName = 'Brand name is required.';
+  else if (f.brandName.trim().length < 2) e.brandName = 'Brand name must be at least 2 characters.';
+  else if (f.brandName.trim().length > 100) e.brandName = 'Brand name must be under 100 characters.';
+
+  if (!f.websiteUrl.trim()) e.websiteUrl = 'Website URL is required.';
+  else if (!/^https?:\/\/.+/.test(f.websiteUrl.trim())) e.websiteUrl = 'URL must start with http:// or https://';
+
+  if (!f.socialHandles.trim()) e.socialHandles = 'Please add your social handles.';
+  else if (f.socialHandles.length > 300) e.socialHandles = 'Keep this under 300 characters.';
+
+  if (!f.brandCategory) e.brandCategory = 'Please select a brand category.';
+  else if (f.brandCategory === 'Other' && !f.brandCategoryOther?.trim()) e.brandCategoryOther = 'Please specify your brand category.';
+
+  if (!f.brandStory.trim()) e.brandStory = 'Please tell us about your brand.';
+  else if (f.brandStory.length > 1000) e.brandStory = 'Keep this under 1000 characters.';
+
+  if (!f.brandStuck.trim()) e.brandStuck = 'Please describe where your brand is stuck.';
+  else if (f.brandStuck.length > 1000) e.brandStuck = 'Keep this under 1000 characters.';
+
+  if (!f.brandVision.trim()) e.brandVision = 'Please share your brand vision.';
+  else if (f.brandVision.length > 1000) e.brandVision = 'Keep this under 1000 characters.';
+
+  // marketingSpend is optional
+
+  if (!f.workingWith) e.workingWith = 'Please select an option.';
+
+  if (f.channels.length === 0) e.channels = 'Please select at least one channel.';
+  else if (f.channels.includes('Other') && !f.channelsOther?.trim()) e.channelsOther = 'Please specify the other channel.';
+
+  if (!f.frustration.trim()) e.frustration = 'Please share your biggest frustration.';
+  else if (f.frustration.length > 1000) e.frustration = 'Keep this under 1000 characters.';
+
+  if (!f.heardFrom) e.heardFrom = 'Please let us know how you heard about us.';
+  else if (f.heardFrom === 'Other' && !f.heardFromOther?.trim()) e.heardFromOther = 'Please specify how you heard about us.';
+
+  return e;
+}
+
 function Field({
   label,
   required,
+  error,
   children,
 }: {
   label: string;
   required?: boolean;
+  error?: string;
   children: React.ReactNode;
 }) {
   return (
@@ -67,12 +136,14 @@ function Field({
         {required && <span className="text-red-500 ml-0.5">*</span>}
       </label>
       {children}
+      {error && <p className="text-xs text-red-500 mt-0.5">{error}</p>}
     </div>
   );
 }
 
 export default function ContactPage() {
   const [form, setForm] = useState<FormState>(INITIAL);
+  const [errors, setErrors] = useState<Errors>({});
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -80,19 +151,28 @@ export default function ContactPage() {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+    setErrors((prev) => ({ ...prev, [name]: undefined }));
   };
 
-  const handleChannelToggle = (ch: string) =>
+  const handleChannelToggle = (ch: string) => {
     setForm((prev) => ({
       ...prev,
       channels: prev.channels.includes(ch)
         ? prev.channels.filter((c) => c !== ch)
         : [...prev.channels, ch],
     }));
+    setErrors((prev) => ({ ...prev, channels: undefined }));
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const validationErrors = validate(form);
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
     setLoading(true);
     setError('');
     try {
@@ -167,22 +247,20 @@ export default function ContactPage() {
               <SectionDivider label="Contact Info" />
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <Field label="Your Name" required>
+                <Field label="Your Name" required error={errors.name}>
                   <input
                     type="text"
                     name="name"
-                    required
                     value={form.name}
                     onChange={handleChange}
                     placeholder="Jane Smith"
                     className={inputCls}
                   />
                 </Field>
-                <Field label="Email" required>
+                <Field label="Email" required error={errors.email}>
                   <input
                     type="email"
                     name="email"
-                    required
                     value={form.email}
                     onChange={handleChange}
                     placeholder="jane@brand.com"
@@ -191,11 +269,10 @@ export default function ContactPage() {
                 </Field>
               </div>
 
-              <Field label="Contact Number" required>
+              <Field label="Contact Number" required error={errors.phone}>
                 <input
                   type="tel"
                   name="phone"
-                  required
                   value={form.phone}
                   onChange={handleChange}
                   placeholder="+91 98765 43210"
@@ -204,20 +281,19 @@ export default function ContactPage() {
               </Field>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <Field label="Brand Name" required>
+                <Field label="Brand Name" required error={errors.brandName}>
                   <input
                     type="text"
                     name="brandName"
-                    required
                     value={form.brandName}
                     onChange={handleChange}
                     placeholder="Your Brand"
                     className={inputCls}
                   />
                 </Field>
-                <Field label="Website URL">
+                <Field label="Website URL" required error={errors.websiteUrl}>
                   <input
-                    type="url"
+                    type="text"
                     name="websiteUrl"
                     value={form.websiteUrl}
                     onChange={handleChange}
@@ -227,7 +303,7 @@ export default function ContactPage() {
                 </Field>
               </div>
 
-              <Field label="Social Media Handles">
+              <Field label="Social Media Handles" required error={errors.socialHandles}>
                 <textarea
                   name="socialHandles"
                   value={form.socialHandles}
@@ -238,7 +314,7 @@ export default function ContactPage() {
                 />
               </Field>
 
-              <Field label="Brand Category">
+              <Field label="Brand Category" required error={errors.brandCategory}>
                 <select
                   name="brandCategory"
                   value={form.brandCategory}
@@ -251,11 +327,23 @@ export default function ContactPage() {
                   ))}
                 </select>
               </Field>
+              {form.brandCategory === 'Other' && (
+                <Field label="Please specify" required error={errors.brandCategoryOther}>
+                  <input
+                    type="text"
+                    name="brandCategoryOther"
+                    value={form.brandCategoryOther}
+                    onChange={handleChange}
+                    placeholder="Your brand category"
+                    className={inputCls}
+                  />
+                </Field>
+              )}
 
               {/* ─── Brand Story ─── */}
               <SectionDivider label="Brand Story" />
 
-              <Field label="Tell us about your brand">
+              <Field label="Tell us about your brand" required error={errors.brandStory}>
                 <textarea
                   name="brandStory"
                   value={form.brandStory}
@@ -266,7 +354,7 @@ export default function ContactPage() {
                 />
               </Field>
 
-              <Field label="Where is your brand stuck right now?">
+              <Field label="Where is your brand stuck right now?" required error={errors.brandStuck}>
                 <textarea
                   name="brandStuck"
                   value={form.brandStuck}
@@ -277,7 +365,7 @@ export default function ContactPage() {
                 />
               </Field>
 
-              <Field label="Where do you see your brand in 3 years?">
+              <Field label="Where do you see your brand in 3 years?" required error={errors.brandVision}>
                 <textarea
                   name="brandVision"
                   value={form.brandVision}
@@ -305,7 +393,7 @@ export default function ContactPage() {
                     ))}
                   </select>
                 </Field>
-                <Field label="Agency or In-house?">
+                <Field label="Agency or In-house?" required error={errors.workingWith}>
                   <select
                     name="workingWith"
                     value={form.workingWith}
@@ -320,7 +408,7 @@ export default function ContactPage() {
                 </Field>
               </div>
 
-              <Field label="Which channels are you currently active on?">
+              <Field label="Which channels are you currently active on?" required error={errors.channels}>
                 <div className="flex flex-wrap gap-2 mt-1">
                   {CHANNELS.map((ch) => (
                     <button
@@ -338,8 +426,20 @@ export default function ContactPage() {
                   ))}
                 </div>
               </Field>
+              {form.channels.includes('Other') && (
+                <Field label="Please specify" required error={errors.channelsOther}>
+                  <input
+                    type="text"
+                    name="channelsOther"
+                    value={form.channelsOther}
+                    onChange={handleChange}
+                    placeholder="Other channel(s) you use"
+                    className={inputCls}
+                  />
+                </Field>
+              )}
 
-              <Field label="What's your biggest frustration with marketing right now?">
+              <Field label="What's your biggest frustration with marketing right now?" required error={errors.frustration}>
                 <textarea
                   name="frustration"
                   value={form.frustration}
@@ -350,7 +450,7 @@ export default function ContactPage() {
                 />
               </Field>
 
-              <Field label="How did you hear about us?">
+              <Field label="How did you hear about us?" required error={errors.heardFrom}>
                 <select
                   name="heardFrom"
                   value={form.heardFrom}
@@ -363,6 +463,18 @@ export default function ContactPage() {
                   ))}
                 </select>
               </Field>
+              {form.heardFrom === 'Other' && (
+                <Field label="Please specify" required error={errors.heardFromOther}>
+                  <input
+                    type="text"
+                    name="heardFromOther"
+                    value={form.heardFromOther}
+                    onChange={handleChange}
+                    placeholder="How did you find us?"
+                    className={inputCls}
+                  />
+                </Field>
+              )}
 
               <button
                 type="submit"

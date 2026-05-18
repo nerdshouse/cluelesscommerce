@@ -8,18 +8,10 @@ import type { HubId } from '@/lib/types';
 const ease = [0.16, 1, 0.3, 1] as const;
 const FALLBACK_HUB: HubId = '360-full-stack';
 
-const HUB_ACCENT: Record<HubId, string> = {
-  '360-full-stack':    '#3B82F6',
-  'global-expansion':  '#F59E0B',
-  'retention':         '#EF4444',
-  'personal-branding': '#8B5CF6',
-};
-
 export default function ServicesGrid() {
   const { activeHub } = useHubStore();
   const hubId = (activeHub ?? FALLBACK_HUB) as HubId;
   const hub   = content.hubs[hubId];
-  const accent = HUB_ACCENT[hubId];
 
   return (
     <section id="services" className="section">
@@ -42,7 +34,7 @@ export default function ServicesGrid() {
             transition={{ duration: 0.6, ease }}
             className="section-heading"
           >
-            What we do
+            Services Built Around Your Growth
           </motion.h2>
 
         </div>
@@ -64,10 +56,7 @@ export default function ServicesGrid() {
               className="bg-surface hover:bg-surface-hover transition-colors duration-200 p-8 flex flex-col min-h-50"
             >
               {/* Hub-specific accent colour — must stay inline */}
-              <span
-                className="text-[10px] font-bold uppercase tracking-[0.2em] mb-5"
-                style={{ color: accent }}
-              >
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] mb-5 text-fg">
                 {service.name}
               </span>
 
@@ -75,11 +64,6 @@ export default function ServicesGrid() {
                 {service.subtext}
               </p>
 
-              <div className="flex flex-wrap gap-2 pt-5 border-t border-border">
-                {service.tags.map((t) => (
-                  <span key={t} className="tag">{t}</span>
-                ))}
-              </div>
             </motion.div>
           ))}
         </motion.div>

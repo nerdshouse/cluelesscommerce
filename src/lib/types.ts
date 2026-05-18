@@ -13,7 +13,7 @@ export interface ProblemCard {
 export interface ServiceBlock {
   name: string;
   subtext: string;
-  tags: string[];
+  tags?: string[];
 }
 
 export interface HubContent {

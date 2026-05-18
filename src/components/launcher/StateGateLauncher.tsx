@@ -5,17 +5,18 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import { useHubStore } from '@/store/hubStore';
 import type { HubId } from '@/lib/types';
+import content from '@/data/content.json';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
-const HUBS: { id: HubId; label: string; tagline: string; color: string }[] = [
-  { id: '360-full-stack', label: '360 Full Stack', tagline: 'End-to-end execution', color: '#EAB308' },
-  { id: 'global-expansion', label: 'Global Expansion', tagline: 'Cross-border growth', color: '#06B6D4' },
-  { id: 'retention', label: 'Retention', tagline: 'Lifetime customer value', color: '#F97316' },
-  { id: 'personal-branding', label: 'Personal Branding', tagline: 'Build the founder brand', color: '#D946EF' },
+const HUBS: { id: HubId; label: string; tagline: string }[] = [
+  { id: '360-full-stack',    label: '360 Full Stack',    tagline: 'End-to-end execution'    },
+  { id: 'global-expansion',  label: 'Global Expansion',  tagline: 'Cross-border growth'     },
+  { id: 'retention',         label: 'Retention',         tagline: 'Lifetime customer value' },
+  { id: 'personal-branding', label: 'Personal Branding', tagline: 'Build the founder brand' },
 ];
 
 interface Props {
@@ -60,10 +61,10 @@ export default function StateGateLauncher({ onUnlock }: Props) {
           key="launcher"
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5, ease }}
-          className="fixed inset-0 z-50 flex flex-col bg-[#050505] font-sans p-6 overflow-hidden"
+          className="fixed inset-0 z-50 flex flex-col bg-bg font-sans p-6 overflow-hidden"
         >
           {/* Background */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-[#111] via-[#050505] to-[#050505] pointer-events-none" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-surface via-bg to-bg pointer-events-none" />
 
           {/* Expand overlay */}
           <AnimatePresence>
@@ -73,7 +74,7 @@ export default function StateGateLauncher({ onUnlock }: Props) {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6, ease }}
                 className="absolute inset-0 z-50 pointer-events-none"
-                style={{ backgroundColor: '#121212' }}
+                style={{ backgroundColor: 'var(--bg)' }}
               />
             )}
           </AnimatePresence>
@@ -90,7 +91,7 @@ export default function StateGateLauncher({ onUnlock }: Props) {
                 className="mb-2"
               >
                 <Image
-                  src="/WhiteLogo1.png"
+                  src="/BlackLogo1.png"
                   alt="Clueless Commerce"
                   width={240}
                   height={60}
@@ -104,7 +105,7 @@ export default function StateGateLauncher({ onUnlock }: Props) {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1, ease }}
-                className="text-[10px] md:text-xs uppercase tracking-[0.3em] text-white/40 font-semibold"
+                className="text-[10px] md:text-xs uppercase tracking-[0.3em] text-fg-muted font-semibold"
               >
                 Select your growth hub
               </motion.p>
@@ -137,21 +138,21 @@ export default function StateGateLauncher({ onUnlock }: Props) {
                         y: { duration: 0.6, delay: i * 0.05, ease: "easeOut" },
                         flex: { duration: 0.5, ease }
                       }}
-                      className="relative rounded-4xl overflow-hidden cursor-pointer group transition-colors duration-500 bg-[#0A0A0A] border flex flex-col items-center justify-center h-60 md:h-96 p-2 md:p-0"
+                      className="relative rounded-4xl overflow-hidden cursor-pointer group transition-colors duration-500 bg-surface border flex flex-col items-center justify-center h-60 md:h-96 p-2 md:p-0"
                       style={{
-                        borderColor: isActive ? hub.color : 'rgba(255,255,255,0.05)',
+                        borderColor: isActive ? content.hubs[hub.id].accentColor : 'var(--border)',
                       }}
                     >
                       <div className="flex flex-col items-center justify-center w-full min-w-55 px-4 pointer-events-none">
 
                         <motion.h2
                           className="font-bold text-xl md:text-2xl md:mb-1 whitespace-nowrap transition-colors duration-300 uppercase"
-                          style={{ color: isActive ? hub.color : 'white' }}
+                          style={{ color: isActive ? content.hubs[hub.id].accentColor : 'var(--fg)' }}
                         >
                           {hub.label}
                         </motion.h2>
 
-                        <motion.p className="text-white/40 text-xs md:text-sm whitespace-nowrap font-medium uppercase">
+                        <motion.p className="text-fg-muted text-xs md:text-sm whitespace-nowrap font-medium uppercase">
                           {hub.tagline}
                         </motion.p>
 
@@ -164,7 +165,7 @@ export default function StateGateLauncher({ onUnlock }: Props) {
                             }}
                             transition={{ duration: 0.4, ease }}
                             className="text-xs md:text-sm font-bold uppercase tracking-[0.2em] whitespace-nowrap flex items-center gap-2"
-                            style={{ color: hub.color }}
+                            style={{ color: content.hubs[hub.id].accentColor }}
                           >
                             Explore <span className="text-sm leading-none ml-1">&rarr;</span>
                           </motion.div>
@@ -178,8 +179,8 @@ export default function StateGateLauncher({ onUnlock }: Props) {
             </div>
 
             {/* FOOTER */}
-            <div className="w-full flex justify-around items-center text-[9px] md:text-[10px] uppercase tracking-[0.2em] text-white font-semibold">
-              <Link href="/contact" className="hover:text-white/70 transition-colors flex">
+            <div className="w-full flex justify-around items-center text-[9px] md:text-[10px] uppercase tracking-[0.2em] text-fg font-semibold">
+              <Link href="/contact" className="hover:text-fg-muted transition-colors flex">
                 CONTACT <ArrowUpRight className="ml-1" size={14} />
               </Link>
               <span>© {new Date().getFullYear()} Clueless Commerce</span>

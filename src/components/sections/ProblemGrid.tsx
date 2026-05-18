@@ -51,7 +51,7 @@ export default function ProblemGrid() {
               transition={{ duration: 0.45, delay: i * 0.08, ease }}
               className="card p-8 flex flex-col gap-5"
             >
-              <span className="inline-flex items-center justify-center w-8 h-8 border border-border text-xs font-mono font-semibold text-fg-muted tracking-widest">
+              <span className="inline-flex items-center justify-center w-8 h-8 text-xs font-mono font-semibold tracking-widest border border-border text-fg">
                 {String(i + 1).padStart(2, '0')}
               </span>
               <div>

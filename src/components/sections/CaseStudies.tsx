@@ -46,7 +46,7 @@ export default function CaseStudies() {
                 <span className="font-serif text-4xl font-bold text-fg-muted leading-none">
                   {study.number}
                 </span>
-                <span className="text-[10px] font-semibold tracking-widest text-white uppercase bg-black px-2 py-1 rounded">
+                <span className="text-[10px] font-semibold tracking-widest text-bg uppercase bg-fg px-2 py-1 rounded">
                   {study.client}
                 </span>
               </div>
@@ -81,7 +81,7 @@ export default function CaseStudies() {
                 <p className="text-[10px] font-semibold tracking-widest text-fg-muted uppercase">
                   Result
                 </p>
-                <p className="text-sm font-medium text-white leading-relaxed">
+                <p className="text-sm font-medium text-fg leading-relaxed">
                   {study.result}
                 </p>
               </div>

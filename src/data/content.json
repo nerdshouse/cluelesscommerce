@@ -16,12 +16,12 @@
         },
         {
           "title": "Pretty But Pointless Creatives",
-          "description": "Your feed looks stunning but your ROAS doesn't. Beautiful creatives without performance thinking is just expensive art — and empires aren't built on aesthetics alone. Brand positioning and sales have to work as one.",
+          "description": "Your feed looks stunning but your ROAS doesn't. Beautiful creatives without performance thinking is just expensive art and empires aren't built on aesthetics alone. Brand positioning and sales have to work as one.",
           "icon": "🎨"
         },
         {
           "title": "Junior Handoff",
-          "description": "Founders sold you the vision but execution went to a junior three levels down. No senior eyes on your account, no accountability at the top — just a fresh face learning on your brand's dime.",
+          "description": "Founders sold you the vision but execution went to a junior three levels down. No senior eyes on your account, no accountability at the top, just a fresh face learning on your brand's dime.",
           "icon": "🤝"
         },
         {
@@ -32,34 +32,28 @@
       ],
       "servicesGrid": [
         {
-          "name": "Performance",
-          "subtext": "Full-funnel paid media strategy built for scale — Meta, Google, and beyond.",
-          "tags": ["Meta Ads", "Google Ads", "CRO", "Analytics"]
+          "name": "Performance Marketing",
+          "subtext": "Meta, Google, YouTube, marketplaces, we manage every rupee of your ad spend like it's coming out of our own pocket."
         },
         {
-          "name": "Brand",
-          "subtext": "Brand identity, positioning, and visual systems that make you impossible to ignore.",
-          "tags": ["Identity", "Positioning", "Copywriting", "Guidelines"]
+          "name": "Brand Positioning & Identity",
+          "subtext": "Positioning, archetype, tone of voice, visual identity, we build the brand before we scale it."
         },
         {
-          "name": "CGI and Creative",
-          "subtext": "High-fidelity 3D and CGI production for product visuals that convert.",
-          "tags": ["3D Render", "Product CGI", "Motion", "Storyboard"]
+          "name": "Social Media Management",
+          "subtext": "Content Calendar, Social Media Management, Strategizing, everything to grow your brand's digital presence."
         },
         {
-          "name": "Tech",
-          "subtext": "Custom storefronts, automation stacks, and integrations built to perform.",
-          "tags": ["Shopify", "Webflow", "Automation", "API"]
+          "name": "Website & Technology",
+          "subtext": "Build and optimise storefronts, landing pages and checkout flows that are designed to perform."
         },
         {
-          "name": "Social",
-          "subtext": "Organic social strategy and content that builds community and drives real engagement.",
-          "tags": ["Strategy", "Content", "Community", "Scheduling"]
+          "name": "UGC",
+          "subtext": "Build a UGC pipeline that gives your brand the social proof it needs to convert cold audiences into loyal customers."
         },
         {
           "name": "SEO",
-          "subtext": "Technical and content SEO that earns long-term organic visibility.",
-          "tags": ["Technical SEO", "Content", "Link Building", "Audit"]
+          "subtext": "We build category defining content, optimise your websites and engineer your search presence so your brand grows organically."
         }
       ]
     },
@@ -73,61 +67,50 @@
       "problemHeading": "Broken systems most brands are stuck in ",
       "problemGrid": [
         {
-          "title": "Lost in Translation",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.",
-          "icon": "🌐"
-        },
-        {
-          "title": "No Market-Entry Playbook",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud.",
+          "title": "No Market Entry Playbook",
+          "description": "No channel mapping, no category benchmarks, no understanding of what the local consumer actually buys and why. That's not expansion, that's an expensive experiment.",
           "icon": "🗺️"
         },
         {
-          "title": "Compliance Blind Spots",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit.",
+          "title": "Compliance Blind Spot",
+          "description": "Every market has its own rulebook for ad regulations, labelling laws, data privacy mandates, import duties etc. One missed compliance detail can pull your product off shelves before you've even found your footing.",
           "icon": "⚠️"
         },
         {
-          "title": "Generic Global Campaigns",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non.",
-          "icon": "📦"
+          "title": "Platform Blindness",
+          "description": "Meta and Google work everywhere, but TikTok, Pinterest, Amazon's etc play by different rules in each market. Brands that don't adapt their channel mix burn budget on the wrong rooms.",
+          "icon": "📱"
+        },
+        {
+          "title": "Lost in Translation",
+          "description": "Word-to-word translation isn't localisation. What works in India falls flat in foreign countries. A brand that doesn't speak the market's language never earns its trust.",
+          "icon": "🌐"
         }
       ],
       "servicesGrid": [
         {
-          "name": "Performance",
-          "subtext": "Multi-market paid media campaigns with localised messaging and budget allocation.",
-          "tags": [
-            "Multi-Market",
-            "Localisation",
-            "Budget Strategy",
-            "Attribution"
-          ]
+          "name": "Multi-Market Paid Media",
+          "subtext": "We manage market specific paid media across Meta, Google and local platforms with messaging engineered for each audience."
         },
         {
-          "name": "Brand",
-          "subtext": "Brand adaptation frameworks that maintain identity while resonating locally.",
-          "tags": ["Localisation", "Cultural Fit", "Tone", "Visual Adaptation"]
+          "name": "Brand Adaptation Framework",
+          "subtext": "We build a localisation framework that keeps your core identity intact while adapting your positioning, tone and story to resonate with a completely new consumer."
         },
         {
-          "name": "CGI and Creative",
-          "subtext": "Market-specific creative production — product, lifestyle, and cultural context.",
-          "tags": ["Cultural Creative", "3D", "Localised Campaigns", "Motion"]
+          "name": "Market Specific Creatives",
+          "subtext": "We make sure each creative is market specific, built around local culture, local behaviour and local buying psychology."
         },
         {
-          "name": "Tech",
-          "subtext": "Multi-currency, multi-language storefronts with regional compliance built in.",
-          "tags": ["Shopify Markets", "i18n", "Tax/Duty", "Localised UX"]
+          "name": "Localised Storefronts",
+          "subtext": "Building storefront with multi-currency pricing, regional language support, local payment gateways and compliance so it feels native to the market it's selling."
         },
         {
-          "name": "Social",
-          "subtext": "Platform-native social strategy for each target market — TikTok, Xiaohongshu, and beyond.",
-          "tags": ["Regional Platforms", "Creators", "Content", "Paid Social"]
+          "name": "Platform-Native Social Strategy",
+          "subtext": "Each country and platform has a different playbook. We build a platform specific social strategy for each targeted market."
         },
         {
-          "name": "SEO",
-          "subtext": "International SEO architecture — hreflang, regional keyword strategy, and local backlinks.",
-          "tags": ["hreflang", "Regional Keywords", "Local Links", "Technical"]
+          "name": "Global Retention Architecture",
+          "subtext": "CAC is significantly higher in mature markets. We build market specific lifecycle flows designed to turn first time international buyers into long-term revenue."
         }
       ]
     },
@@ -136,61 +119,43 @@
       "label": "Retention",
       "shortLabel": "Retention",
       "tagline": "Turn one-time buyers into lifetime customers. Loyalty, lifecycle, and repeat revenue.",
-      "accentColor": "#EF4444",
+      "accentColor": "#FF5A36",
       "cardGradient": "from-red-900 to-red-950",
       "problemHeading": "Broken systems most brands are stuck in ",
       "problemGrid": [
         {
-          "title": "Freelancers With Zero Accountability",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.",
-          "icon": "🤷"
-        },
-        {
-          "title": "High Acquisition, Zero Retention",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud.",
-          "icon": "📉"
-        },
-        {
-          "title": "Email Treated as an Afterthought",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit.",
+          "title": "Retention Treated as Afterthought",
+          "description": "Email, SMS and WhatsApp aren't just broadcast tools, they're your highest-ROI retention engine. Most people set up just a welcome flow and wonder why repeat purchases never come.",
           "icon": "📧"
         },
         {
-          "title": "No Post-Purchase Experience",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non.",
+          "title": "High Acquisition. Zero Retention.",
+          "description": "Brands spend lakhs bringing customers in through the front door while they quietly leave through the back. A business that can't retain is funding its own churn and no amount of ad spend fixes a broken retention engine.",
+          "icon": "📉"
+        },
+        {
+          "title": "No Post Purchase Experience",
+          "description": "Most brands go silent once an order is placed. The post-purchase window is your highest intent moment and the most wasted opportunity in D2C.",
           "icon": "🛒"
+        },
+        {
+          "title": "Ignoring Already Existing Data",
+          "description": "Purchase frequency, cart abandonment etc is all sitting in your backend. Brands that don't build retention flows around this data are leaving their most profitable customers unattended.",
+          "icon": "📊"
         }
       ],
       "servicesGrid": [
         {
-          "name": "Performance",
-          "subtext": "Retargeting and loyalty-focused paid media that brings customers back at lower CAC.",
-          "tags": ["Retargeting", "LTV Campaigns", "Win-Back", "Lookalike"]
+          "name": "Retargeting & Loyalty-Focused Paid Media",
+          "subtext": "We build retargeting architectures designed specifically to re-engage and convert existing customers back into repeat buyers."
         },
         {
-          "name": "Brand",
-          "subtext": "Post-purchase brand storytelling that builds emotional loyalty and drives repeat intent.",
-          "tags": ["Loyalty Narrative", "UGC", "Community", "Packaging Copy"]
+          "name": "Retention Specific Creative",
+          "subtext": "Creative built for the customer who already purchased, because content that earns a second purchase looks nothing like the content that earned the first."
         },
         {
-          "name": "CGI and Creative",
-          "subtext": "Retention-specific creative: unboxing, lifestyle follow-ups, and subscription visuals.",
-          "tags": ["Unboxing", "Lifestyle", "Email Creative", "Subscription"]
-        },
-        {
-          "name": "Tech",
-          "subtext": "Loyalty programme tech, subscription infrastructure, and post-purchase automations.",
-          "tags": ["Loyalty Apps", "Subscriptions", "Klaviyo", "Post-Purchase"]
-        },
-        {
-          "name": "Social",
-          "subtext": "Community-building content and ambassador programmes to deepen brand attachment.",
-          "tags": ["Community", "Ambassadors", "UGC", "Engagement"]
-        },
-        {
-          "name": "SEO",
-          "subtext": "Content strategy targeting existing customers — reviews, guides, and loyalty-driven organic.",
-          "tags": ["Content SEO", "Reviews", "Guides", "Internal Linking"]
+          "name": "Loyalty & Subscription Infrastructure",
+          "subtext": "We build and implement the full retention tech stack like loyalty tiers, subscription flows, post-purchase automations, referral programs etc."
         }
       ]
     },
@@ -204,61 +169,42 @@
       "problemHeading": "Broken systems most brands are stuck in ",
       "problemGrid": [
         {
-          "title": "Invisible Founders",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.",
+          "title": "Invisible Founder",
+          "description": "In a world where consumers buy from people before they buy from brands, a founder who isn't visible is leaving the most powerful trust signal off the table.",
           "icon": "🫥"
         },
         {
           "title": "No Consistent Voice",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud.",
+          "description": "Without a defined tone and a set of consistent content pillars you're not building a personal brand. You're just making noise between the gaps.",
           "icon": "🎭"
         },
         {
-          "title": "Chasing Virality, Not Authority",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit.",
+          "title": "Chasing Virality, No Authority",
+          "description": "Going viral feels like winning until nobody remembers your name the next morning. Authority isn't built on reach, it's built on relevance, consistency and a point of view people keep coming back for.",
           "icon": "🎯"
         },
         {
-          "title": "Brand Divorced From Person",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non.",
+          "title": "Separating Founder From Brand",
+          "description": "Most founders hide behind their company logo scared that personal visibility will overshadow the brand. The reality is the opposite. A strong founder voice is the most cost effective brand building tool in existence.",
           "icon": "💔"
         }
       ],
       "servicesGrid": [
         {
-          "name": "Performance",
-          "subtext": "Thought-leadership amplification through paid — get your content in front of the right rooms.",
-          "tags": ["LinkedIn Ads", "Amplification", "Lead Gen", "Retargeting"]
+          "name": "Founder Positioning Framework",
+          "subtext": "We build your positioning, point of view and visual identity so your personal brand has a foundation for every piece of content."
         },
         {
-          "name": "Brand",
-          "subtext": "Founder positioning frameworks — your story, your POV, your visual identity.",
-          "tags": [
-            "Positioning",
-            "Bio and Story",
-            "Visual Identity",
-            "Tone of Voice"
-          ]
+          "name": "Personal Website & Newsletter Infrastructure",
+          "subtext": "Social platforms change algorithms. Your website and newsletter don't. We build your personal digital home that gives you a direct unfiltered line to the audience you're building."
         },
         {
-          "name": "CGI and Creative",
-          "subtext": "Professional photo and video direction, podcast covers, speaker visuals, and press kits.",
-          "tags": ["Headshots", "Speaker Kits", "Podcast", "Press Assets"]
+          "name": "Platform Content Strategy",
+          "subtext": "We build platform native content strategy around your authentic expertise intentionally engineered to build authority where it matters most."
         },
         {
-          "name": "Tech",
-          "subtext": "Personal website, newsletter infrastructure, and CRM for audience building.",
-          "tags": ["Personal Site", "Newsletter", "CRM", "Landing Pages"]
-        },
-        {
-          "name": "Social",
-          "subtext": "LinkedIn, Instagram, and X content strategy built around your authentic expertise.",
-          "tags": ["LinkedIn", "Instagram", "X/Twitter", "Content Calendar"]
-        },
-        {
-          "name": "SEO",
-          "subtext": "Personal SEO — rank for your name, your niche, and the conversations you want to own.",
-          "tags": ["Personal SEO", "PR Links", "Thought Leadership", "SERP"]
+          "name": "Personal SEO",
+          "subtext": "We build your search presence through strategic content, backlink architecture and category defined positioning so you rank before you're even in the room."
         }
       ]
     }

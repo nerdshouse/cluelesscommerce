@@ -55,7 +55,7 @@ export default function Header() {
         className="hover:opacity-70 transition-opacity cursor-pointer"
       >
         <Image
-          src="/WhiteLogo1.png"
+          src="/BlackLogo1.png"
           alt="Clueless Commerce"
           width={160}
           height={40}
