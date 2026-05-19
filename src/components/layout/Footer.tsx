@@ -44,8 +44,8 @@ export default function Footer() {
           {/* Inner circle */}
           <div className="absolute inset-3 rounded-full border border-border/60 flex items-center justify-center">
             <Image
-              src="/logos/BlackLogo2.png"
-              alt="Clueless Commerce"
+              src="/logos/logo3.png"
+              alt="CC"
               width={40}
               height={40}
               className="w-full h-full object-contain p-1"

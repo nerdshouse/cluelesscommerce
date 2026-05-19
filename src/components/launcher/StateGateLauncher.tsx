@@ -13,9 +13,9 @@ import { ArrowUpRight } from 'lucide-react';
 const ease = [0.16, 1, 0.3, 1] as const;
 
 const HUBS: { id: HubId; label: string; tagline: string }[] = [
-  { id: '360-full-stack',    label: '360 Full Stack',    tagline: 'End-to-end execution'    },
-  { id: 'global-expansion',  label: 'Global Expansion',  tagline: 'Cross-border growth'     },
-  { id: 'retention',         label: 'Retention',         tagline: 'Lifetime customer value' },
+  { id: '360-full-stack', label: '360 Full Stack', tagline: 'End-to-end execution' },
+  { id: 'global-expansion', label: 'Global Expansion', tagline: 'Cross-border growth' },
+  { id: 'retention', label: 'Retention', tagline: 'Lifetime customer value' },
   { id: 'personal-branding', label: 'Personal Branding', tagline: 'Build the founder brand' },
 ];
 
@@ -91,12 +91,11 @@ export default function StateGateLauncher({ onUnlock }: Props) {
                 className="mb-2"
               >
                 <Image
-                  src="/logos/BlackLogo1.png"
+                  src="/logos/logo1.png"
                   alt="Clueless Commerce"
-                  width={240}
-                  height={60}
-                  className="w-40 md:w-60 h-auto scale-175"
-                  style={{ height: 'auto' }}
+                  width={600}
+                  height={150}
+                  className="h-12 md:h-16 w-auto object-contain"
                   priority
                 />
               </motion.div>

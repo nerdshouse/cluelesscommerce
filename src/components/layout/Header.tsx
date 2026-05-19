@@ -55,12 +55,12 @@ export default function Header() {
         className="hover:opacity-70 transition-opacity cursor-pointer"
       >
         <Image
-          src="/logos/BlackLogo1.png"
+          src="/logos/logo1.png"
           alt="Clueless Commerce"
-          width={160}
-          height={40}
-          style={{ height: '2.75rem', width: 'auto' }}
+          width={500}
+          height={125}
           priority
+          className="w-auto h-10 md:h-12 object-contain"
         />
       </button>
 
