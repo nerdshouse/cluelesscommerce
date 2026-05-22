@@ -22,7 +22,7 @@ export default function CaseStudies() {
           Real brands. Real problems.{' '}<span className="text-accent">Real results.</span>
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border auto-rows-fr">
           {caseStudies.map((study, i) => (
             <motion.div
               key={study.client}
@@ -30,10 +30,10 @@ export default function CaseStudies() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1, ease }}
-              className="bg-surface hover:bg-surface-hover transition-colors p-5 sm:p-8 flex flex-col gap-4"
+              className="bg-surface hover:bg-surface-hover transition-colors p-5 sm:p-8 flex flex-col"
             >
               {/* Number + client tag row */}
-              <div className="flex items-start justify-between">
+              <div className="flex items-start justify-between mb-4">
                 <span className="font-serif text-4xl font-bold text-fg-muted leading-none">
                   {study.number}
                 </span>
@@ -43,39 +43,14 @@ export default function CaseStudies() {
               </div>
 
               {/* Title */}
-              <h3 className="font-serif text-lg font-bold text-fg leading-snug">
+              <h3 className="font-serif text-lg font-bold text-fg leading-snug mb-4">
                 {study.title}
               </h3>
 
-              {/* Problem */}
-              <div className="flex flex-col gap-1">
-                <p className="text-[10px] font-semibold tracking-widest text-fg-muted uppercase">
-                  Problem
-                </p>
-                <p className="text-sm text-fg leading-relaxed">
-                  {study.problem}
-                </p>
-              </div>
-
-              {/* What we did */}
-              <div className="flex flex-col gap-1">
-                <p className="text-[10px] font-semibold tracking-widest text-fg-muted uppercase">
-                  What We Did
-                </p>
-                <p className="text-sm text-fg leading-relaxed">
-                  {study.whatWeDid}
-                </p>
-              </div>
-
-              {/* Result */}
-              <div className="flex flex-col gap-1 border-t border-border pt-5 mt-auto">
-                <p className="text-[10px] font-semibold tracking-widest text-accent uppercase">
-                  Result
-                </p>
-                <p className="text-sm font-medium text-fg leading-relaxed">
-                  {study.result}
-                </p>
-              </div>
+              {/* Description */}
+              <p className="text-sm text-fg leading-relaxed text-justify">
+                {study.description}
+              </p>
             </motion.div>
           ))}
         </div>

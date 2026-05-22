@@ -239,27 +239,21 @@
     "caseStudies": [
       {
         "number": "01",
-        "client": "DEHRADUN BAZAAR",
-        "title": "The City's Biggest Flea Market Experience",
-        "problem": "High ad spend with minimal conversions and poor audience targeting.",
-        "whatWeDid": "Data-driven audience segmentation, creative refresh, and complete funnel optimisation.",
-        "result": "A benchmark for community-driven brand activations through storytelling, design & digital strategy."
+        "client": "BRIYO",
+        "title": "Four Times the Returns",
+        "description": "We took care of their website & performance marketing. Audited what wasn't working, rebuilt campaigns and fixed their performance & website strategy, which grew their ROAS by 4x."
       },
       {
         "number": "02",
-        "client": "MANERI",
-        "title": "Crafting India's First Fan Movement Brand",
-        "problem": "No brand presence. Struggling to generate qualified leads for enterprise ceiling fan sales.",
-        "whatWeDid": "Complete brand overhaul, LinkedIn thought leadership, inbound content + 3D render strategy.",
-        "result": "Turned an idea into a nationwide cultural identity — from the people, for the people."
+        "client": "PHAELORA",
+        "title": "What They Always Wanted",
+        "description": "Built their D2C website from scratch. They wanted a custom website with a very specific vision of how it would look and feel and we delivered exactly that, down to the last detail."
       },
       {
         "number": "03",
-        "client": "SAATVIK SOLAR",
-        "title": "Powering a Brand for Its IPO Phase",
-        "problem": "Outdated digital presence, losing ground to modern solar competitors.",
-        "whatWeDid": "Website redesign, local SEO, reputation management, investor-facing brand refresh.",
-        "result": "Stronger identity, higher engagement & renewed market confidence ahead of IPO."
+        "client": "DOERAA",
+        "title": "Fixed What Was Quietly Killing Conversions",
+        "description": "They came with a list of problems their previous agency had left behind - cart issues, slow page speed, poor GT Matrix scores and no one-click checkout. We rebuilt what was broken and the difference in conversions started showing immediately."
       }
     ]
   }
