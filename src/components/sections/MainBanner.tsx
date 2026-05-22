@@ -89,12 +89,12 @@ export default function MainBanner() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.15 + i * 0.09, ease }}
-                className="bg-surface p-6 flex flex-row items-center gap-6"
+                className="bg-surface p-6 flex flex-row items-center gap-3"
               >
-                <p className="font-serif text-4xl md:text-5xl font-extrabold text-accent leading-none shrink-0">
+                <p className="font-serif text-3xl md:text-4xl font-extrabold text-accent leading-none shrink-0 w-20 md:w-24 text-center">
                   {stat.value}
                 </p>
-                <div>
+                <div className="min-w-0">
                   <p className="text-sm font-semibold text-fg">{stat.label}</p>
                   <p className="text-xs text-fg-muted leading-relaxed mt-0.5">{stat.sub}</p>
                 </div>
