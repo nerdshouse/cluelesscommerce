@@ -37,7 +37,7 @@ export default function FinalCTA() {
           transition={{ duration: 0.5, ease, delay: 0.18 }}
         >
           <Link href="/contact" className="btn-primary text-base px-8 py-3.5">
-            Book Free Consultation
+            Schedule Free Consultation
           </Link>
         </motion.div>
 

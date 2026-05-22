@@ -66,7 +66,7 @@ export default function WhatMakesUs() {
           className="mt-8 flex justify-center"
         >
           <Link href="/contact" className="btn-ghost">
-            Book Free Consultation
+            Schedule Free Consultation
           </Link>
         </motion.div>
 

@@ -72,7 +72,7 @@ export default function CaseStudies() {
             </p>
           </div>
           <Link href="/contact" className="shrink-0 btn-primary">
-            Book Free Consultation
+            Schedule Free Consultation
           </Link>
         </motion.div>
       </div>

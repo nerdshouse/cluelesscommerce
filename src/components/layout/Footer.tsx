@@ -38,7 +38,7 @@ export default function Footer() {
               <path id="circle" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" />
             </defs>
             <text className="text-[8px] fill-fg-muted tracking-[0.15em] uppercase font-medium">
-              <textPath href="#circle">Clueless Commerce·Clueless Commerce·</textPath>
+              <textPath href="#circle">{" "}Clueless Commerce · Clueless Commerce ·{" "}</textPath>
             </text>
           </svg>
           {/* Inner circle */}
@@ -91,7 +91,7 @@ export default function Footer() {
             href="/contact"
             className="btn-primary px-8 py-3.5 rounded-full text-sm font-semibold"
           >
-            Book Free Consultation
+            Schedule Free Consultation
           </Link>
         </motion.div>
 

@@ -415,11 +415,10 @@ export default function ContactPage() {
                       type="button"
                       key={ch}
                       onClick={() => handleChannelToggle(ch)}
-                      className={`px-3 py-1.5 text-xs border rounded-sm transition-colors ${
-                        form.channels.includes(ch)
+                      className={`px-3 py-1.5 text-xs border rounded-sm transition-colors ${form.channels.includes(ch)
                           ? 'bg-(--fg) text-(--bg) border-(--fg)'
                           : 'bg-(--surface) text-(--fg-muted) border-(--border) hover:border-(--fg-muted)'
-                      }`}
+                        }`}
                     >
                       {ch}
                     </button>
@@ -481,7 +480,7 @@ export default function ContactPage() {
                 disabled={loading}
                 className="mt-4 px-6 py-3.5 bg-(--fg) text-(--bg) font-medium text-sm rounded-sm hover:opacity-90 transition-opacity disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                {loading ? 'Sending…' : 'Book Free Consultation'}
+                {loading ? 'Sending…' : 'Schedule Free Consultation'}
               </button>
 
               {error && (

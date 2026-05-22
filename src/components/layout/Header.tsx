@@ -90,7 +90,7 @@ export default function Header() {
         ))}
 
         <Link href="/contact" className="btn-sm rounded-sm!">
-          Book Free Consultation
+          Schedule Free Consultation
         </Link>
       </nav>
 
@@ -150,7 +150,7 @@ export default function Header() {
               onClick={() => setMenuOpen(false)}
               className="btn-sm justify-center"
             >
-              Book Free Consultation
+              Schedule Free Consultation
             </Link>
 
             <a href="/privacy-policy" className="body-muted text-xs hover:text-fg transition-colors">
