@@ -33,17 +33,18 @@ export default function PrivacyPolicyPage() {
   return (
     <div className="min-h-screen bg-(--bg) text-(--fg)">
       {/* Nav */}
-      <div className="px-6 md:px-10 xl:px-20 h-16 flex items-center border-b border-(--border)">
+      {/* <div className="px-6 md:px-10 xl:px-20 h-16 flex items-center border-b border-(--border)">
         <Link
           href="/"
           className="font-serif text-lg font-bold tracking-tight hover:opacity-70 transition-opacity"
         >
           ← Clueless Commerce
         </Link>
-      </div>
+      </div> */}
 
       <div className="px-6 md:px-10 xl:px-20 py-14 max-w-6xl mx-auto">
-        <p className="text-xs uppercase tracking-widest text-(--fg-muted) mb-4">Legal</p>
+        404 Page not found
+        {/* <p className="text-xs uppercase tracking-widest text-(--fg-muted) mb-4">Legal</p>
         <h1 className="font-serif text-4xl md:text-5xl font-bold leading-tight mb-3">
           Privacy Policy
         </h1>
@@ -60,7 +61,7 @@ export default function PrivacyPolicyPage() {
               <p className="text-sm text-(--fg-muted) leading-relaxed">{s.body}</p>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   );

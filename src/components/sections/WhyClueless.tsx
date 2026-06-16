@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import content from '@/data/content.json';
+import { ChevronsRight  } from 'lucide-react';
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -19,13 +20,13 @@ export default function WhyClueless() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease }}
-              className="section-heading mb-4 md:mb-8"
+              className="section-heading mb-4 md:mb-8 text-[52px]!"
             >
-              Why <span className="text-accent">Brands Choose Us</span>
+              Why <span className="text-accent font-black-italic">Brands Choose Us</span>
             </motion.h2>
 
-            
-              {/* <motion.p
+
+            {/* <motion.p
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -47,14 +48,14 @@ export default function WhyClueless() {
                 transition={{ duration: 0.5, delay: i * 0.09, ease }}
                 className="flex gap-5 py-4 sm:py-6 border-b border-border first:pt-0 last:border-b-0"
               >
-                <span className="shrink-0 w-7 h-7 rounded-full border border-accent flex items-center justify-center text-[10px] text-accent mt-0.5 font-mono">
-                  {i + 1}
+                <span className="shrink-0 text-accent">
+                  <ChevronsRight  className="w-7 h-7" strokeWidth={1.5} />
                 </span>
                 <div>
-                  <h3 className="font-serif text-xl font-bold text-fg mb-1">
+                  <h3 className="font-serif text-xl font-bold text-accent mb-1">
                     {point.title}
                   </h3>
-                  <p className="body-muted text-sm">{point.description}</p>
+                  <p className="text-fg text-sm">{point.description}</p>
                 </div>
               </motion.div>
             ))}

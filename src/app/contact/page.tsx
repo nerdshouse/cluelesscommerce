@@ -133,7 +133,7 @@ function Field({
     <div className="flex flex-col gap-1.5">
       <label className="text-xs uppercase tracking-widest text-(--fg-muted)">
         {label}
-        {required && <span className="text-red-500 ml-0.5">*</span>}
+        {required && <span className="text-accent ml-0.5">*</span>}
       </label>
       {children}
       {error && <p className="text-xs text-red-500 mt-0.5">{error}</p>}
@@ -207,7 +207,7 @@ export default function ContactPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="font-serif text-4xl md:text-5xl font-bold leading-tight"
+          className="font-serif text-4xl md:text-5xl font-bold leading-tight text-accent"
         >
           Book a Strategy Call
         </motion.h1>
@@ -478,7 +478,7 @@ export default function ContactPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="mt-4 px-6 py-3.5 bg-(--fg) text-(--bg) font-medium text-sm rounded-sm hover:opacity-90 transition-opacity disabled:opacity-60 disabled:cursor-not-allowed"
+                className="mt-4 px-6 py-3.5 bg-accent! text-bg! font-medium text-sm rounded-sm hover:opacity-90 transition-opacity disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 {loading ? 'Sending…' : 'Schedule Free Consultation'}
               </button>
@@ -486,10 +486,6 @@ export default function ContactPage() {
               {error && (
                 <p className="text-xs text-red-500 text-center">{error}</p>
               )}
-
-              <p className="text-xs text-(--fg-muted) text-center pb-8">
-                We respond within 24 hours.
-              </p>
             </form>
           )}
         </motion.div>

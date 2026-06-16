@@ -11,7 +11,7 @@ import type { HubId } from '@/lib/types';
 const HUBS: { id: HubId; label: string }[] = [
   { id: '360-full-stack', label: '360 Full Stack' },
   { id: 'global-expansion', label: 'Global Expansion' },
-  { id: 'retention', label: 'Retention' },
+  // { id: 'retention', label: 'Retention' },
   { id: 'personal-branding', label: 'Personal Branding' },
 ];
 
@@ -57,10 +57,10 @@ export default function Header() {
         <Image
           src="/logos/logo1.png"
           alt="Clueless Commerce"
-          width={500}
+          width={400}
           height={125}
           priority
-          className="w-auto h-10 md:h-12 object-contain"
+          className="w-auto h-8 md:h-10 object-contain"
         />
       </button>
 
@@ -83,13 +83,13 @@ export default function Header() {
           </button>
         ))}
 
-        {OTHERS.map((item) => (
+        {/* {OTHERS.map((item) => (
           <Link key={item.label} href={item.href} className="nav-link">
             {item.label}
           </Link>
-        ))}
+        ))} */}
 
-        <Link href="/contact" className="btn-sm rounded-sm!">
+        <Link href="/contact" className="btn-sm rounded-sm! bg-accent! text-bg!">
           Schedule Free Consultation
         </Link>
       </nav>
@@ -148,14 +148,14 @@ export default function Header() {
             <Link
               href="/contact"
               onClick={() => setMenuOpen(false)}
-              className="btn-sm justify-center"
+              className="btn-sm justify-center bg-accent! text-bg!"
             >
               Schedule Free Consultation
             </Link>
 
-            <a href="/privacy-policy" className="body-muted text-xs hover:text-fg transition-colors">
+             {/* <a href="/privacy-policy" className="body-muted text-xs hover:text-fg transition-colors">
               Privacy Policy
-            </a>
+            </a>  */}
           </motion.div>
         )}
       </AnimatePresence>

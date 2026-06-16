@@ -88,7 +88,7 @@ export default function HomeClient() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 16 }}
             transition={{ duration: 0.4, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed bottom-6 right-6 z-40 hidden lg:flex items-center gap-2 px-5 py-3 rounded-full bg-white text-black text-xs font-semibold shadow-lg hover:bg-white/90 transition-colors"
+            className="fixed bottom-6 right-6 z-40 hidden lg:flex items-center gap-2 px-5 py-3 rounded-full bg-accent! text-bg! text-xs font-semibold shadow-lg hover:opacity-90 transition-opacity"
           >
             Schedule Free Consultation
             <span className="text-sm leading-none">↗</span>

@@ -11,7 +11,7 @@ const FALLBACK_HUB: HubId = '360-full-stack';
 export default function ServicesGrid() {
   const { activeHub } = useHubStore();
   const hubId = (activeHub ?? FALLBACK_HUB) as HubId;
-  const hub   = content.hubs[hubId];
+  const hub = content.hubs[hubId];
 
   return (
     <section id="services" className="section">
@@ -25,8 +25,8 @@ export default function ServicesGrid() {
             transition={{ duration: 0.6, ease }}
             className="section-heading"
           >
-            Services Built <span className="text-accent">Around</span> Your Growth
-          </motion.h2>  
+            Services  <span className="text-accent font-black-italic">Built Around Your Growth</span>
+          </motion.h2>
 
         </div>
 
@@ -47,11 +47,11 @@ export default function ServicesGrid() {
               className="bg-surface hover:bg-surface-hover transition-colors duration-200 p-5 sm:p-8 flex flex-col min-h-30 sm:min-h-40"
             >
               {/* Hub-specific accent colour — must stay inline */}
-              <span className="text-[11px] font-bold uppercase tracking-widest mb-2 text-accent">
+              <span className="text-md font-bold uppercase tracking-widest mb-1 text-accent">
                 {service.name}
               </span>
 
-              <p className="text-fg font-serif text-md leading-snug flex-1 mb-6">
+              <p className="text-fg font-serif text-sm leading-snug flex-1 mb-6">
                 {service.subtext}
               </p>
 

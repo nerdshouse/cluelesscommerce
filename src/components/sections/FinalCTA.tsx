@@ -14,10 +14,11 @@ export default function FinalCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.65, ease }}
-          className="font-serif text-3xl md:text-5xl font-bold text-fg leading-[1.05] max-w-3xl"
+          className="font-serif text-2xl md:text-5xl font-bold text-fg leading-[1.05] max-w-3xl"
         >
-          Your category has <span className="text-accent">one spot</span>,{' '}
-          <span className="font-bold-italic">this is how you claim it</span>
+          Your category has <span className="text-accent">one spot</span>,
+          <br />
+          <span className="font-black-italic">this is how you claim it</span>
         </motion.h2>
 
         <motion.p
@@ -36,7 +37,7 @@ export default function FinalCTA() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease, delay: 0.18 }}
         >
-          <Link href="/contact" className="btn-primary text-base px-8 py-3.5">
+          <Link href="/contact" className="btn-primary text-base px-8 py-3.5 bg-accent! text-bg!">
             Schedule Free Consultation
           </Link>
         </motion.div>

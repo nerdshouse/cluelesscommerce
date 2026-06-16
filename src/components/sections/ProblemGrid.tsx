@@ -23,7 +23,7 @@ export default function ProblemGrid() {
           transition={{ duration: 0.6, ease }}
           className="section-heading mb-6 md:mb-8"
         >
-          Broken systems  <br/><span className='text-accent'>most brands are stuck in</span> 
+          Broken systems  <br /><span className="text-accent font-black-italic">most brands are stuck in</span>
         </motion.h2>
 
         <motion.div
@@ -41,14 +41,14 @@ export default function ProblemGrid() {
               transition={{ duration: 0.45, delay: i * 0.08, ease }}
               className="card p-4 sm:p-8 flex flex-col gap-2"
             >
-              <span className="inline-flex items-center justify-center w-8 h-8 text-xs font-mono font-semibold tracking-widest border border-fg text-fg">
+              {/* <span className="inline-flex items-center justify-center w-8 h-8 text-xs font-mono font-semibold tracking-widest border border-fg text-fg">
                 {String(i + 1).padStart(2, '0')}
-              </span>
+              </span> */}
               <div>
-                <h3 className="font-serif text-lg md:text-xl font-bold text-fg mb-1 md:mb-2 leading-snug">
+                <h3 className="font-serif text-lg md:text-xl font-bold text-accent mb-1 leading-snug">
                   {card.title}
                 </h3>
-                <p className="body-muted text-sm text-justify">{card.description}</p>
+                <p className="text-sm text-justify text-fg">{card.description}</p>
               </div>
             </motion.div>
           ))}

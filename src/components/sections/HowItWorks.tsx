@@ -34,9 +34,9 @@ export default function HowItWorks() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease }}
           className="section-heading mb-8 md:mb-12"
-        > 
-          How We Go From{' '}
-          <span className="font-bold-italic">Clueless to <span className="text-accent">Compounding</span></span>
+        >
+          How We {' '}
+          <span className="text-accent font-black-italic">Go From Clueless to Compounding</span>
         </motion.h2>
 
         {/* Steps — vertical timeline on mobile, horizontal on desktop */}
@@ -66,8 +66,8 @@ export default function HowItWorks() {
 
               {/* Text */}
               <div className="pb-8 md:pb-0 md:text-center">
-                <h3 className="font-serif text-lg font-bold text-fg mb-1">{step.title}</h3>
-                <p className="body-muted text-sm leading-relaxed">{step.description}</p>
+                <h3 className="font-serif text-lg font-bold text-accent mb-1">{step.title}</h3>
+                <p className="text-fg text-sm leading-relaxed">{step.description}</p>
               </div>
             </motion.div>
           ))}

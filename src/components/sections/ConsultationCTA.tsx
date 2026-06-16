@@ -45,7 +45,7 @@ export default function ConsultationCTA() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease, delay: 0.24 }}
         >
-          <Link href="/contact" className="btn-primary">
+          <Link href="/contact" className="btn-primary bg-accent! text-bg!">
             Schedule Free Consultation
           </Link>
         </motion.div>

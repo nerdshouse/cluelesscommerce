@@ -1,0 +1,61 @@
+{
+  "video-gallery": {
+    "id": "video-gallery",
+    "title": "Video Gallery",
+    "pageTitle": "Premium Video Gallery Section",
+    "pageDescription": "Embed high-performance, shoppable video galleries directly into your Shopify store. Boost customer engagement and drive conversions instantly - zero coding required.",
+    "shortDescription": "Embed high-performance, shoppable video galleries directly into your Shopify store. Increase engagement and time-on-page without slowing down your site.",
+    "longDescription": {
+      "heading": "Why use our Video Gallery?",
+      "paragraphs": [
+        "Video content is proven to increase conversion rates by up to 80%. However, embedding multiple videos natively in Shopify often destroys your page load speed.",
+        "Our custom Video Gallery section uses lazy-loading and custom thumbnail generation to ensure your store remains blazing fast. Whether you are showcasing product tutorials, user generated content, or brand stories, this section provides a premium viewing experience directly on your storefront."
+      ]
+    },
+    "features": [
+      {
+        "icon": "Layout",
+        "title": "Responsive Grid",
+        "description": "Adapts perfectly to mobile, tablet, and desktop screens automatically."
+      },
+      {
+        "icon": "Code",
+        "title": "Zero Coding",
+        "description": "Install in 1 minute. Customize colors and layout via Shopify Editor."
+      },
+      {
+        "icon": "FileText",
+        "title": "Detailed Docs",
+        "description": "Includes step-by-step video tutorials and written guides."
+      }
+    ],
+    "pricing": {
+      "standard": {
+        "name": "Standard",
+        "price": 19,
+        "description": "Essential gallery features.",
+        "features": [
+          "Up to 4 videos per section",
+          "Standard Grid Layout",
+          "YouTube & Vimeo support"
+        ]
+      },
+      "pro": {
+        "name": "Pro",
+        "price": 39,
+        "description": "Advanced capabilities & styling.",
+        "badge": "Recommended",
+        "features": [
+          "Unlimited videos (Carousel mode)",
+          "Shoppable Hotspots (Link products)",
+          "Direct MP4 upload support",
+          "Custom play button styling"
+        ]
+      }
+    },
+    "trustBadges": [
+      "Instant Download",
+      "OS 2.0 Compatible"
+    ]
+  }
+}

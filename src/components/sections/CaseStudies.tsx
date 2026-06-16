@@ -19,7 +19,7 @@ export default function CaseStudies() {
           transition={{ duration: 0.6, ease }}
           className="section-heading mb-8"
         >
-          Real brands. Real problems.{' '}<span className="text-accent">Real results.</span>
+          Real brands. Real problems.{' '}<span className="text-accent font-black-italic">Real results.</span>
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border auto-rows-fr">
@@ -32,18 +32,15 @@ export default function CaseStudies() {
               transition={{ duration: 0.5, delay: i * 0.1, ease }}
               className="bg-surface hover:bg-surface-hover transition-colors p-5 sm:p-8 flex flex-col"
             >
-              {/* Number + client tag row */}
-              <div className="flex items-start justify-between mb-4">
-                <span className="font-serif text-4xl font-bold text-fg-muted leading-none">
-                  {study.number}
-                </span>
-                <span className="text-[10px] font-semibold tracking-widest text-bg uppercase bg-fg px-2 py-1 rounded">
+              {/* Client tag row */}
+              <div className="flex items-start mb-4">
+                <span className="text-[10px] font-semibold tracking-widest text-bg uppercase bg-accent px-2 py-1 rounded">
                   {study.client}
                 </span>
               </div>
 
               {/* Title */}
-              <h3 className="font-serif text-lg font-bold text-fg leading-snug mb-4">
+              <h3 className="font-serif text-lg font-bold text-accent leading-snug mb-4">
                 {study.title}
               </h3>
 
@@ -71,7 +68,7 @@ export default function CaseStudies() {
               Let&apos;s build something that actually moves the needle.
             </p>
           </div>
-          <Link href="/contact" className="shrink-0 btn-primary">
+          <Link href="/contact" className="shrink-0 btn-primary bg-accent! text-bg!">
             Schedule Free Consultation
           </Link>
         </motion.div>

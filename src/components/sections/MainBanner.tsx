@@ -8,7 +8,7 @@ const ease = [0.16, 1, 0.3, 1] as const;
 
 const STATS = [
   { value: '50+',   label: 'Clients',            sub: 'Brands scaled across categories'              },
-  { value: '5+',    label: 'Years of Experience', sub: 'Branding and performance since day one'           },
+  { value: '10+',    label: 'Years of Combined Experience', sub: 'Branding and performance since day one'           },
   { value: '100%',  label: 'In-House Team',       sub: 'Zero freelancers, zero outsourcing' },
 ];
 
@@ -16,7 +16,7 @@ const TRUST = ['Free 30-min call', 'No commitment', 'Talk to the founder directl
 
 const STRIP = [
   { value: '50+',   label: 'Clients'            },
-  { value: '5+',    label: 'Years of Experience' },
+  { value: '10+',    label: 'Years of Combined Experience' },
   { value: '100%',  label: 'In-House Team'       },
 ];
 
@@ -63,7 +63,7 @@ export default function MainBanner() {
             </motion.p>
 
             <motion.div {...fadeUp(0.44)} className="mt-4 lg:mt-8 flex flex-col sm:flex-row gap-3">
-              <Link href="/contact" className="btn-primary rounded-md! justify-center">
+              <Link href="/contact" className="btn-primary rounded-md! justify-center bg-accent! text-bg!">
                 {banner.cta}
               </Link>
               <Link href="#services" className="btn-ghost rounded-md! justify-center">

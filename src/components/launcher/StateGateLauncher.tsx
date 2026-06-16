@@ -15,7 +15,7 @@ const ease = [0.16, 1, 0.3, 1] as const;
 const HUBS: { id: HubId; label: string; tagline: string }[] = [
   { id: '360-full-stack', label: '360 Full Stack', tagline: 'End-to-end execution' },
   { id: 'global-expansion', label: 'Global Expansion', tagline: 'Cross-border growth' },
-  { id: 'retention', label: 'Retention', tagline: 'Lifetime customer value' },
+  // { id: 'retention', label: 'Retention', tagline: 'Lifetime customer value' },
   { id: 'personal-branding', label: 'Personal Branding', tagline: 'Build the founder brand' },
 ];
 
@@ -111,7 +111,7 @@ export default function StateGateLauncher({ onUnlock }: Props) {
             </div>
 
             {/* CENTER (Cards perfectly centered) */}
-            <div className="flex-1 flex items-center justify-center w-full">
+            <div className="flex-1 flex flex-col items-center justify-center w-full px-0 md:px-4 lg:px-8">
               <div className="w-full flex flex-col md:flex-row gap-4">
                 {HUBS.map((hub, i) => {
                   const isSelected = selected === hub.id;
@@ -130,14 +130,14 @@ export default function StateGateLauncher({ onUnlock }: Props) {
                       animate={{
                         opacity: isFading ? 0 : 1,
                         y: 0,
-                        flex: isSelected ? 10 : (isHovered && !expanding ? 2.5 : 1),
+                        flex: isSelected ? 10 : (isHovered && !expanding ? 1.5 : 1),
                       }}
                       transition={{
                         opacity: { duration: 0.3 },
                         y: { duration: 0.6, delay: i * 0.05, ease: "easeOut" },
                         flex: { duration: 0.5, ease }
                       }}
-                      className="relative rounded-4xl overflow-hidden cursor-pointer group transition-colors duration-500 bg-surface border flex flex-col items-center justify-center h-60 md:h-96 p-2 md:p-0"
+                      className="relative rounded-4xl overflow-hidden cursor-pointer group transition-colors duration-500 bg-surface border flex flex-col items-center justify-center h-48 md:h-72 p-2 md:p-0"
                       style={{
                         borderColor: isActive ? content.hubs[hub.id].accentColor : 'var(--border)',
                       }}
@@ -175,7 +175,29 @@ export default function StateGateLauncher({ onUnlock }: Props) {
                   );
                 })}
               </div>
+              {/* Custom Sections Box */}
+              {/* <Link
+                href="/products/video-gallery"
+                className={`w-full md:w-1/2 md:hover:w-7/12 mt-6 bg-surface border rounded-3xl p-6 flex flex-col items-center justify-center text-center transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group cursor-pointer ${
+                  isMobile ? 'border-[var(--accent)]' : 'border-[var(--border)] hover:border-[var(--accent)]'
+                }`}
+              >
+                <div className="flex items-center justify-center gap-2 mb-2">
+                  <h3 className={`text-sm md:text-base font-bold uppercase tracking-[0.2em] transition-colors duration-300 ${
+                    isMobile ? 'text-[var(--accent)]' : 'text-fg group-hover:text-[var(--accent)]'
+                  }`}>
+                    Custom Sections
+                  </h3>
+                  <ArrowUpRight size={16} className={`opacity-70 group-hover:opacity-100 transition-all duration-300 ${
+                    isMobile ? 'text-[var(--accent)]' : 'text-fg group-hover:text-[var(--accent)]'
+                  }`} />
+                </div>
+                <p className="text-xs md:text-sm text-fg-muted max-w-sm">
+                  Premium, plug-and-play components to elevate your Shopify storefront without writing code.
+                </p>
+              </Link> */}
             </div>
+
 
             {/* FOOTER */}
             <div className="w-full flex justify-around items-center text-[9px] md:text-[10px] uppercase tracking-[0.2em] text-fg font-semibold">

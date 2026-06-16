@@ -89,7 +89,7 @@ export default function Footer() {
         >
           <Link
             href="/contact"
-            className="btn-primary px-8 py-3.5 rounded-full text-sm font-semibold"
+            className="btn-primary px-8 py-3.5 rounded-full text-sm font-semibold bg-accent! text-bg!"
           >
             Schedule Free Consultation
           </Link>
