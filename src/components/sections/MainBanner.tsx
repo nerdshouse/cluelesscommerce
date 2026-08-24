@@ -1,31 +1,58 @@
 'use client';
 
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import content from '@/data/content.json';
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
 const STATS = [
-  { value: '50+',   label: 'Clients',            sub: 'Brands scaled across categories'              },
-  { value: '10+',    label: 'Years of Combined Experience', sub: 'Branding and performance since day one'           },
-  { value: '100%',  label: 'In-House Team',       sub: 'Zero freelancers, zero outsourcing' },
+  { value: '50+', label: 'Clients', sub: 'Brands scaled across categories' },
+  { value: '10+', label: 'Years of Combined Experience', sub: 'Branding and performance since day one' },
+  { value: '100%', label: 'In-House Team', sub: 'Zero freelancers, zero outsourcing' },
 ];
 
 const TRUST = ['Free 30-min call', 'No commitment', 'Talk to the founder directly'];
 
 const STRIP = [
-  { value: '50+',   label: 'Clients'            },
-  { value: '10+',    label: 'Years of Combined Experience' },
-  { value: '100%',  label: 'In-House Team'       },
+  { value: '50+', label: 'Clients' },
+  { value: '10+', label: 'Years of Combined Experience' },
+  { value: '100%', label: 'In-House Team' },
 ];
 
-const fadeUp = (delay = 0) => ({
-  initial: { opacity: 0, y: 28 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true as const },
-  transition: { duration: 0.65, ease, delay },
-});
+const chaosVariants: Variants = {
+  hidden: (custom: any) => ({
+    opacity: 0,
+    x: custom.x || (Math.random() - 0.5) * 100,
+    y: custom.y || (Math.random() - 0.5) * 100 + 40,
+    rotate: custom.rotate || (Math.random() - 0.5) * 30,
+    scale: 0.8,
+  }),
+  visible: {
+    opacity: 1,
+    x: 0,
+    y: 0,
+    rotate: 0,
+    scale: 1,
+    transition: {
+      type: "spring",
+      damping: 14,
+      stiffness: 100,
+      mass: 0.8,
+    }
+  }
+};
+
+const staggerContainer: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.08,
+      delayChildren: 0.1,
+    }
+  }
+};
 
 export default function MainBanner() {
   const { banner } = content.static;
@@ -40,29 +67,54 @@ export default function MainBanner() {
         <div className="section-inner px-6 md:px-10 py-8 md:py-16 grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-8 lg:gap-16 items-center">
 
           {/* Left — copy */}
-          <div>
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            animate="visible"
+          >
 
             <motion.h1
-              {...fadeUp(0.1)}
-              className="font-serif text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-extrabold leading-[1.04] tracking-tight text-fg"
+              className="font-serif text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-extrabold leading-[1.04] tracking-tight text-fg flex flex-wrap gap-[0.25em]"
             >
-              {banner.headline}
+              {banner.headline.split(' ').map((word: string, i: number) => (
+                <motion.span 
+                  key={i} 
+                  custom={{ rotate: (i % 2 === 0 ? 15 : -15) }}
+                  variants={chaosVariants} 
+                  className="inline-block"
+                >
+                  {word}
+                </motion.span>
+              ))}
             </motion.h1>
 
             <motion.p
-              {...fadeUp(0.22)}
+              custom={{ y: 50, rotate: -5 }}
+              variants={chaosVariants}
               className="font-serif text-xl md:text-2xl font-bold text-fg mt-4 leading-snug whitespace-pre-line"
             >
               {banner.subheadline}
             </motion.p>
 
-            <motion.hr {...fadeUp(0.28)} className="border-border mt-2 lg:mt-4" />
+            <motion.hr 
+              custom={{ x: -100, rotate: 0 }}
+              variants={chaosVariants} 
+              className="border-border mt-4 lg:mt-6" 
+            />
 
-            <motion.p {...fadeUp(0.34)} className="body-muted text-base mt-2 lg:mt-4 text-justify">
+            <motion.p 
+              custom={{ x: 50, rotate: 2 }}
+              variants={chaosVariants} 
+              className="body-muted text-base mt-4 lg:mt-6 text-justify"
+            >
               {banner.subtext}
             </motion.p>
 
-            <motion.div {...fadeUp(0.44)} className="mt-4 lg:mt-8 flex flex-col sm:flex-row gap-3">
+            <motion.div 
+              custom={{ y: 80, rotate: -8 }}
+              variants={chaosVariants} 
+              className="mt-6 lg:mt-8 flex flex-col sm:flex-row gap-3"
+            >
               <Link href="/contact" className="btn-primary rounded-md! justify-center bg-accent! text-bg!">
                 {banner.cta}
               </Link>
@@ -71,25 +123,36 @@ export default function MainBanner() {
               </Link>
             </motion.div>
 
-            <motion.div {...fadeUp(0.54)} className="mt-5 flex flex-wrap gap-x-5 gap-y-2">
+            <motion.div 
+              custom={{ y: 40, rotate: 5 }}
+              variants={chaosVariants} 
+              className="mt-6 flex flex-wrap gap-x-5 gap-y-2"
+            >
               {TRUST.map((t) => (
                 <span key={t} className="flex items-center gap-1.5 text-xs text-fg-muted">
                   <span className="text-accent font-semibold">✓</span> {t}
                 </span>
               ))}
             </motion.div>
-          </div>
+          </motion.div>
 
           {/* Right — stats grid */}
-          <div className="grid grid-cols-1 gap-px bg-border rounded-xl overflow-hidden">
+          <motion.div 
+            variants={staggerContainer}
+            initial="hidden"
+            animate="visible"
+            className="grid grid-cols-1 gap-px bg-border rounded-xl overflow-hidden"
+          >
             {STATS.map((stat, i) => (
               <motion.div
                 key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.15 + i * 0.09, ease }}
-                className="bg-surface p-6 flex flex-row items-center gap-3"
+                custom={{ 
+                  x: i === 0 ? 100 : i === 2 ? -100 : 0, 
+                  y: i === 1 ? 100 : 0,
+                  rotate: i === 0 ? 12 : i === 1 ? -8 : 15 
+                }}
+                variants={chaosVariants}
+                className="bg-surface p-6 flex flex-row items-center gap-3 origin-center"
               >
                 <p className="font-serif text-3xl md:text-4xl font-extrabold text-accent leading-none shrink-0 w-20 md:w-24 text-center">
                   {stat.value}
@@ -100,7 +163,7 @@ export default function MainBanner() {
                 </div>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
 
         </div>
       </section>
